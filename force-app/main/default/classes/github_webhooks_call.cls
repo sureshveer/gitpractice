@@ -10,7 +10,7 @@ global with sharing class github_webhooks_call {
         RestResponse res=RestContext.response;
         System.debug('webhook response');
         System.debug(req.requestBody.tostring()+'payload');
-        Account a=new Account(name='githubcall');
+        Account a=new Account(name='gitcallrepos');
         insert a;
     }
 }
