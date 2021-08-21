@@ -8,6 +8,8 @@ public class apexlctask23 {
     public apexlctask23(){
         con=new List<contact>();
         c= new contact();
+
+        
         con.add(c);
       // addcon=true;
        // addcon1=false;
