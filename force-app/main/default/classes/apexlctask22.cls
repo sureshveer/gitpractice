@@ -14,6 +14,7 @@ public class apexlctask22 {
     public List<Account> acclist{get;set;}
    
     public apexlctask22(){
+        system.debug('suresh');
         
         inputfields=true;
         tablelist=false;
