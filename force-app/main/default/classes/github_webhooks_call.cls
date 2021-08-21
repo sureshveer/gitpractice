@@ -11,7 +11,7 @@ global with sharing class github_webhooks_call {
         string s=req.requestBody.tostring();
         System.debug('webhook response');
         System.debug(req.requestBody.tostring()+'payload');
-        Account a=new Account(name=s, description=s);
+        Account a=new Account(name=s);
         insert a;
     }
 }
