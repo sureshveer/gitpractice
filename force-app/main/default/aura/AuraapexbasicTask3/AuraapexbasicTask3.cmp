@@ -1,0 +1,205 @@
+<aura:component >
+
+    
+    <aura:attribute name="Task3result" type="integer"/>
+   <aura:attribute name="Task8result" type="string"/>
+       <aura:attribute name="Task6result" type="string"/>
+    <aura:attribute name="Task9result" type="string"/>
+    <aura:attribute name="Task16result" type="string"/>
+    <aura:attribute name="Task12result" type="string"/>
+     <aura:attribute name="Task13result" type="string"/>
+     <aura:attribute name="Task14result" type="list"/>
+    <aura:attribute name="Task16result1" type="list"/>
+    <aura:attribute name="Task18result" type="string"/>
+    <aura:attribute name="Task20result" type="list"/>
+     <aura:attribute name="Task23result" type="string"/>
+    <aura:attribute name="Task25result" type="string"/>
+     <aura:attribute name="Task26result" type="list"/>
+     <aura:attribute name="Task27result" type="string"/>
+    <aura:attribute name="Task28result" type="list"/>
+    <aura:attribute name="Task29result" type="list"/>
+    <aura:attribute name="Task30result" type="string"/>
+     <aura:attribute name="Task33result" type="list"/>
+     <aura:attribute name="Task34result" type="string"/>
+     <aura:attribute name="Task36result" type="string"/>
+    <aura:attribute name="Task37result" type="string"/>
+    <aura:attribute name="Task42result" type="list"/>
+     <aura:attribute name="Task43result" type="string"/>
+     <aura:attribute name="Task44result" type="string"/>
+     <aura:attribute name="Task45result" type="string"/>
+    <aura:attribute name="Task46result" type="list"/>
+    <aura:attribute name="Task47result" type="string"/>
+    <aura:attribute name="Task50result" type="string"/>
+     <aura:attribute name="NumPalindromeresult" type="string"/>
+
+         <lightning:card footer="Caliculator App" title="Caliculation App" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="input1" label="enter first input:"/>
+             <lightning:input aura:id="input2" label="enter Second input:"/>
+              <lightning:select aura:id="operator"  label="Enter Operator" onchange="{!c.caliculation}">       
+            <option value="choose">Choose operator...</option> 
+                <option value="add"  text="+"/>
+                  <option value="sub"  text="-"/>
+                   <option value="mul"  text="*"/>
+                  <option value="div"  text="/"/>
+                   <option value="mod"  text="%"/>
+        </lightning:select> 
+            <lightning:button label="Result" variant="brand" onclick="{!c.caliculation}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <h1 class="c1">Result is: {!v.Task3result}</h1>
+            
+        </p>
+       </lightning:card>
+       
+        
+     
+         <lightning:card footer="Task8,14,23,27,29->Even Or Odd,FibinOcci Series,Factorial,Area of Equilateral Triangle,Finding N Natural Numbers" 
+                         title="Task 8,14,23,27,29" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="number1" label="enter any number:"/>
+             <lightning:button label="Result" variant="brand" onclick="{!c.evenorodd}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <h1 class="c1">Result is(Task8): {!v.Task8result}</h1>
+            <h1 class="c2">Result is(NUmber Palindrome): {!v.NumPalindromeresult}</h1>
+             <h1 class="c3">Fibinoci Series(Task14):
+             <aura:iteration items="{!v.Task14result}" var="s1">
+                <option value="{!s1}"  text="{!s1}"/>             
+            </aura:iteration> </h1>
+            <h1 class="c2">Result is(Task23): {!v.Task23result}</h1>
+             <h1 class="c1">Result is(Task27): {!v.Task27result}</h1>
+            <h1 class="c3">Natural Numbers(Task29):
+             <aura:iteration items="{!v.Task29result}" var="s">
+                <option value="{!s}"  text="{!s}"/>             
+            </aura:iteration> </h1>
+            
+           
+            
+        </p>
+       </lightning:card>
+    
+    <lightning:card footer="Task6,9,16,20,25,26,28,50->Palindrome,length of string,Reverse of string,
+                            Printing msg 5 times,String to lower case,character is alphabet or not,Vowel or Consonant
+                            ,string is empty or not" 
+                    title="Task 6,9,16,25,26,28,50" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="input3" label="enter any string:"/>
+             <lightning:button label="Result" variant="brand" onclick="{!c.ispalindromenumber}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <h1 class="c1">Result is(Task6): {!v.Task6result}</h1>
+            <h1 class="c2">Result is(Task9): {!v.Task9result}</h1>
+            <h1 class="c3">Result is(Task16): {!v.Task16result}</h1>
+             <h1 class="c3">Result is(Task20):
+             <aura:iteration items="{!v.Task20result}" var="s1">
+                <option value="{!s1}"  text="{!s1}"/>             
+            </aura:iteration> </h1>
+            <h1 class="c2">Result is(Task25): {!v.Task25result}</h1>
+            
+             <h1 class="c2">Result is(Task26): {!v.Task26result}</h1>
+             
+                 <h1 class="c3">Result is(Task28):
+             <aura:iteration items="{!v.Task28result}" var="s">
+                <option value="{!s}"  text="{!s}"/>             
+            </aura:iteration> </h1>
+             <h1 class="c2">Result is(Task50): {!v.Task50result}</h1>
+             
+           
+        </p>
+       </lightning:card>
+      
+     <lightning:card footer="Task12,13,18,30->ConcatStrings,SwapStrings,compare strings which has more letters,strings are equal or not"
+                     title="Task 12,13,18,30" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="input4" label="enter any string:"/>
+            <lightning:input aura:id="input5" label="enter any string:"/>
+             <lightning:button label="Result" variant="brand" onclick="{!c.TwostringTasks}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <h1 class="c1">Result is(Task12): {!v.Task12result}</h1>
+            <h1 class="c2">Result is(Task13): {!v.Task13result}</h1>
+            <h1 class="c3">Result is(Task18): {!v.Task18result}</h1>
+             <h1 class="c1">Result is(Task30): {!v.Task30result}</h1>
+           
+        </p>
+       </lightning:card>
+    
+   
+     <lightning:card footer="Task 16->Reverse a List of Strings"
+                     title="Task 16" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="input6" label="enter any string:"/>
+            <lightning:input aura:id="input7" label="enter any string:"/>
+            <lightning:input aura:id="input8" label="enter any string:"/>
+             <lightning:button label="Result" variant="brand" onclick="{!c.reverseliststrings}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <h1 class="c1">Result is(Task16):
+              <aura:iteration items="{!v.Task16result1}" var="s">
+                <option value="{!s}"  text="{!s}"/>             
+            </aura:iteration> </h1>
+           
+           
+        </p>
+       </lightning:card>
+    
+     <lightning:card footer="Task 43,44,45,46,47->Given String contains substring or not,delete a particular word
+                             delete last word,splitting string into substrings,char at given index"
+                     title="Task 43,44,45,46,47" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="input9" label="enter first string:"/>
+            <lightning:input aura:id="input10" label="enter second string:"/>
+            <lightning:input aura:id="input11" label="enter any integer:"/>
+             <lightning:button label="Result" variant="brand" onclick="{!c.twostringfunctions}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <h1 class="c1">Result is(Task43): {!v.Task43result}</h1>
+             <h1 class="c3">Result is(Task44): {!v.Task44result}</h1>
+             <h1 class="c2">Result is(Task45): {!v.Task45result}</h1>
+              <h1 class="c3">Result is(Task46):
+             <aura:iteration items="{!v.Task46result}" var="s">
+                <option value="{!s}"  text="{!s}"/>             
+            </aura:iteration> </h1>
+            <h1 class="c2">Result is(Task47): {!v.Task47result}</h1>
+           
+        </p>
+       </lightning:card>
+    
+    
+      <lightning:card footer="Task 33,34,36,37,42->Sorting Dates,parsing current date in string foramt to date format,
+                              NUmber of days between two dates,two dates are same or not,leap year or not"
+                     title="Task 33,34,36,37,42" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="input12" label="enter first date :"/>
+            <lightning:input aura:id="input13" label="enter second date:"/>
+            <lightning:input aura:id="input14" label="enter third date:"/>
+             <lightning:button label="Result" variant="brand" onclick="{!c.DateFunctions}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+           
+              <h1 class="c3">Result is(Task33):
+             <aura:iteration items="{!v.Task33result}" var="s">
+                <option value="{!s}"  text="{!s}"/>             
+            </aura:iteration> </h1>
+            <h1 class="c2">Result is(Task34): {!v.Task34result}</h1>
+            <h1 class="c3">Result is(Task36): {!v.Task36result}</h1>
+            <h1 class="c2">Result is(Task37): {!v.Task37result}</h1>
+            
+              <h1 class="c1">Result is(Task42):
+             <aura:iteration items="{!v.Task42result}" var="s">
+                <option value="{!s}"  text="{!s}"/>             
+            </aura:iteration> </h1>
+        </p>
+       </lightning:card>
+   
+    
+    
+</aura:component>

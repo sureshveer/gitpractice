@@ -1,0 +1,6 @@
+<apex:page controller="csvController" cache="true" contentType="text/csv#Accountlist.csv" language="en-US">
+    Col A,"Col B","Col C"
+    <apex:repeat value="{!acclist}" var="a">
+        {!a.id},{!a.name},"{!a.industry}"
+    </apex:repeat>
+</apex:page>

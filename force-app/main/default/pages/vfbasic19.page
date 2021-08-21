@@ -1,0 +1,13 @@
+<apex:page controller="apexvfbasic19" >
+     <apex:form >
+    <apex:pageBlock title="Basic task19">
+        <apex:pageBlockSection title="Case Details">
+            <apex:pageBlockTable value="{!Caselist}" var="cs">
+                <apex:column value="{!cs.ContactEmail}"/> <br/>
+                <apex:column value="{!cs.Origin}"/><br/>
+</apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

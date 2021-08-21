@@ -1,0 +1,23 @@
+<apex:page controller="task25helperclass" sidebar="false" showHeader="false">
+     <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task25">
+                
+                <apex:selectList value="{!selectedindustry}" label="enter industry"  size="1">
+                    <apex:selectOptions value="{!industry}"/>
+                    <apex:actionSupport event="onchange" reRender="acctsid"/>
+                
+                </apex:selectList>
+                <br/>
+                 <apex:pageBlockTable value="{!accts}" var="a" id="acctsid">
+               <apex:column value="{!a.id}"/>
+               <apex:column value="{!a.name}"/>
+               <apex:column value="{!a.industry}"/>
+               <apex:column value="{!a.rating}"/>
+                
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="employee">
+    <apex:form >
+    <apex:pageBlock title="Basic task1">
+        <apex:pageBlockSection title="employee details">
+            <apex:outputText label="empName:" value="{!empName}"> </apex:outputText><br/>
+            <apex:outputText label="salary:" value="{!salary}"> </apex:outputText><br/>
+            <apex:outputText label="experience:" value="{!exp}"> </apex:outputText><br/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:page controller="vfbasic_product">
+    <apex:form >
+    <apex:pageBlock title="vf Basic task3">
+        <apex:pageBlockSection title="product details">
+            <apex:outputText label="prodName:" value="{!prodName}"> </apex:outputText><br/>
+            <apex:outputText label="price:" value="{!price}"> </apex:outputText><br/>
+            <apex:outputText label="quantity:" value="{!quantity}"> </apex:outputText><br/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

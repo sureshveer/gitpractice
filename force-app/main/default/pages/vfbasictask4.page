@@ -1,0 +1,11 @@
+<apex:page controller="vfbasic_movie">
+    <apex:form >
+    <apex:pageBlock title="vf Basic task4">
+        <apex:pageBlockSection title="movie details">
+            <apex:outputText label="moviename:" value="{!moviename}"> </apex:outputText><br/>
+            <apex:outputText label="ticketsavailable:" value="{!ticketsavailable}"> </apex:outputText><br/>
+            <apex:outputText label="showTime:" value="{!showTime}"> </apex:outputText><br/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

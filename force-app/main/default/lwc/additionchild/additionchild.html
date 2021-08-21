@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Caliculator">
+        <div class="slds-m-around_medium">
+            <lightning-input  name='num1' label='Enter Number1:' value={number1} onchange={handleChange}></lightning-input>
+            <lightning-input  name='num2' label='Enter Number2:'  value={number2} onchange={handleChange}></lightning-input>
+            <lightning-combobox
+            name="opt"
+            label="Select Operator"
+            value={operator}
+            placeholder="Select Operator:"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            <br/>
+            <lightning-button variant="brand" label="result" title="caliculation" onclick={handleClick} ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

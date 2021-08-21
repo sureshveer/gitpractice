@@ -1,0 +1,17 @@
+<apex:page controller="apexvfbasic22">>
+     <apex:form >
+    <apex:pageBlock title="vf basic task 22">
+        <apex:pageBlockSection title="fetching all opportunity redcords which are closed this month">
+            <apex:outputText value="{!oppid}"></apex:outputText><br/>
+            <apex:outputText value="{!oppname}"></apex:outputText><br/>
+            <apex:outputText value="{!oppclosedate}"></apex:outputText><br/>
+            <br/>
+		             <apex:pageBlockTable value="{!opplist}" var="opp">
+                <apex:column value="{!opp.id}"/>
+                <apex:column value="{!opp.name}"/>
+                  <apex:column value="{!opp.closedate}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

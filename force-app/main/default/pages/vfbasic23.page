@@ -1,0 +1,12 @@
+<apex:page controller="apexvfbasic23">
+    
+     <apex:form >
+    <apex:pageBlock title="vf basic task 23">
+        <apex:pageBlockSection title="fetching all opportunity records created in last year">
+            <apex:outputText value="{!oppid}"></apex:outputText>
+            <apex:outputText value="{!oppname}"></apex:outputText>
+            <apex:outputText value="{!oppcreateddate}"></apex:outputText>
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

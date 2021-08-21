@@ -1,0 +1,23 @@
+<apex:page controller="task16helperclass" sidebar="false" showHeader="false">
+     <apex:form >
+    <apex:pageBlock title="visualforce tasks">
+        <apex:pageBlockSection title="task16">
+        <apex:selectList value="{!Accountname}" size="1">
+            <apex:selectOptions value="{!task16}">
+            </apex:selectOptions>
+        </apex:selectList>
+            
+             <apex:commandButton action="{!show}" value="show contacts"/>
+           <apex:pageBlockTable value="{!conlist}" var="con">
+               <apex:column value="{!con.id}"/>
+               <apex:column value="{!con.name}"/>
+              
+               
+            </apex:pageBlockTable>
+            
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

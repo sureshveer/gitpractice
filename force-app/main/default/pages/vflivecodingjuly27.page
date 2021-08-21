@@ -1,0 +1,14 @@
+<apex:page controller="apexlivecodingjuly27">
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:inputfield value="{!c.DueDate__c}" label="DueDate:" required="true"/><br/>
+                 <apex:inputfield value="{!c.Priority}" label="DueDate:" /><br/>
+                 <apex:inputfield value="{!c.Status}" label="DueDate:" /><br/>
+            
+            </apex:pageBlockSection>>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

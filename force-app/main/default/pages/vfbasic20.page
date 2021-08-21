@@ -1,0 +1,13 @@
+<apex:page controller="studentvfbasictask14">
+   <apex:form >
+    <apex:pageBlock title="vf Basic task20">
+        <apex:pageBlockSection title="vf basic tasks">
+            <apex:pageBlockTable value="{!stu}" var="s">
+                <apex:column value="{!s.Name}"/>
+                <apex:column value="{!s.age}"/> 
+                <apex:column value="{!s.dateofbirth}"/>
+</apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

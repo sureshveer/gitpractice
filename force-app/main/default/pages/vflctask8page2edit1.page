@@ -1,0 +1,11 @@
+<apex:page controller="apexlctask18" action="{!showasset}">
+    <apex:form >
+          <apex:pageBlock >
+            <apex:pageBlockSection title="Asset Details are">
+                <apex:outputText value="{!a.name}" label="lastname:"/><br/>
+                <apex:outputText value="{!a.status}" label="phone:"/><br/>
+                    </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

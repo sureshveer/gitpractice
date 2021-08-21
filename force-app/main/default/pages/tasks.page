@@ -1,0 +1,53 @@
+<apex:page controller="searchcontactcontroller">
+    <apex:form >
+       <apex:pageBlock >
+          <apex:pageBlockSection >
+              <apex:outputLabel >enter Accountant name</apex:outputLabel>
+               <apex:inputText value="{!name}" />
+              <apex:commandButton value="search" action="{!searchcontact}"/>
+          </apex:pageBlockSection>
+       </apex:pageBlock>
+   </apex:form>
+    
+     <apex:form >  
+    <apex:pageBlock title="List of contacts">
+      <apex:pageBlockSection title="searched contact">
+         <apex:pageBlockTable value="{!contacts}" var="con">
+
+            <apex:column value="{!con.name}"/>
+            <apex:column value="{!con.phone}"/>
+            <apex:column value="{!con.email}"/>
+          
+         </apex:pageBlockTable>
+      </apex:pageBlockSection>
+   </apex:pageBlock>   
+</apex:form>    
+    
+     <apex:form >  
+    <apex:pageBlock title="List of opportunities">
+      <apex:pageBlockSection title="searched opportunity">
+         <apex:pageBlockTable value="{!opportunities}" var="opp">
+
+            <apex:column value="{!opp.name}"/>
+            <apex:column value="{!opp.type}"/>
+            <apex:column value="{!opp.amount}"/>
+          
+         </apex:pageBlockTable>
+      </apex:pageBlockSection>
+   </apex:pageBlock>   
+</apex:form>    
+    
+     <apex:form >  
+    <apex:pageBlock title="List of Cases">
+      <apex:pageBlockSection title="searched Case">
+         <apex:pageBlockTable value="{!cases}" var="c">
+            <apex:column value="{!c.CaseNumber}"/>
+            <apex:column value="{!c.status}"/>
+            <apex:column value="{!c.subject}"/>
+            <apex:column value="{!c.type}"/>
+          
+         </apex:pageBlockTable>
+      </apex:pageBlockSection>
+   </apex:pageBlock>   
+</apex:form>    
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page Controller="pdfcontroller">
+     <apex:form >
+    <apex:pageBlock >
+        <apex:commandButton action="{!pdfbutton}" value="view as pdf" />
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

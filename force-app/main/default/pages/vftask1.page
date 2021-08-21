@@ -1,0 +1,27 @@
+<apex:page controller="task1helperclass" sidebar="false" showHeader="false">
+     
+    <apex:form >
+        
+        <apex:pageBlock title="Apex Tasks">
+            <apex:pageBlockSection title="Mytask">
+                <apex:inputText value="{!firstinput}" label="enter first input:"/><br/>
+                <apex:inputText value="{!secondinput}" label="enter second input:"/><br/>
+               
+                <apex:selectList value="{!operations}" label="enter operation:" >
+                    <apex:selectOption itemValue="addition" itemLabel="addition"/>
+                    <apex:selectOption itemValue="subtract" itemLabel="subtract"/>
+                    <apex:selectOption itemValue="multiply" itemLabel="multiply"/>
+                    <apex:selectOption itemValue="division" itemLabel="division"/>
+                    <apex:selectOption itemValue="remainder" itemLabel="remainder"/>
+                </apex:selectList>
+                <br/>
+                
+                <apex:commandButton action="{!operation}" value="submit" /><br/>
+                <apex:inputText value="{!result}" label="result is:"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+    
+    
+</apex:page>

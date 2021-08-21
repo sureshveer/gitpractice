@@ -1,0 +1,21 @@
+<apex:page renderAs="pdf" controller="pdfcontrollertask32">
+    
+     <apex:form >
+<apex:pageBlock >
+    <apex:pageBlockTable value="{!oppList}" var="opp" border="2" >
+           <apex:column value="{!opp.name}"/>
+           <apex:column value="{!opp.id}"/>
+           <apex:column value="{!opp.stagename}"/>
+            <apex:column value="{!opp.account.name}"/>
+        </apex:pageBlockTable>    
+    <br/>
+    
+     <apex:pageBlockTable value="{!acclist}" var="acc" border="2" >
+           <apex:column value="{!acc.name}"/>
+          <apex:column value="{!acc.id}"/>
+           
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+        </apex:form>
+    
+</apex:page>

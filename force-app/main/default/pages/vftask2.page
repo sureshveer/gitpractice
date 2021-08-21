@@ -1,0 +1,32 @@
+<apex:page Standardcontroller="Account" sidebar="false" showHeader="false">
+     
+    <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task2">
+                <apex:inputText value="{!Account.Name}" label="Account Name:"/><br/>
+                <apex:inputText value="{!Account.AccountNumber}" label="Account Number:"/><br/>
+                
+                <apex:selectList value="{!Account.industry}" label="Industry:" size="1">
+                    <apex:selectOption itemValue="agriculture" itemLabel="agriculture"/>
+                    <apex:selectOption itemValue="apparel" itemLabel="apparel"/>
+                    <apex:selectOption itemValue="Banking" itemLabel="Banking"/>
+                    <apex:selectOption itemValue="energy" itemLabel="energy"/>
+                    <apex:selectOption itemValue="chemicals" itemLabel="chemicals"/>
+                </apex:selectList>
+                <br/>
+                 <apex:selectList value="{!Account.type}" label="Type:" size="1" >
+                    <apex:selectOption itemValue="Customer-Direct" itemLabel="Customer-Direct"/>
+                    <apex:selectOption itemValue="Customer-Channel" itemLabel="Customer-Channel"/>
+                    <apex:selectOption itemValue="Prospect" itemLabel="Prospect"/>
+                    <apex:selectOption itemValue="Installation partner" itemLabel="Installation partner"/>
+                    <apex:selectOption itemValue="Technology partner" itemLabel="Technology partner"/>
+                </apex:selectList>
+                <br/>
+                <apex:inputText value="{!Account.Description}" label="Description:"/><br/>
+                <apex:commandButton action="{!save}" value="save" /><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

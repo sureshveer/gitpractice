@@ -1,0 +1,56 @@
+<apex:page controller="apexlctask22">
+      <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection columns="1" title="Insert account" rendered="{!inputfields}">
+                <apex:inputField value="{!acc.name}" required="false" />
+                 <apex:inputField value="{!acc.industry}" />
+                 <apex:inputField value="{!acc.rating}" />
+                <apex:commandButton action="{!saveacc}" value="save record"/>
+            
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Today Created Records"  rendered="{!tablelist1}" id="section2id">
+                  <apex:pageBlockTable value="{!accwraplist}" var="a1"  rendered="{!tablelist}" id="caseid">
+                      <apex:column >
+                          <apex:inputCheckbox value="{!a1.selected}"> 
+                              <apex:actionSupport action="{!checkitem}" event="onchange" />
+                          </apex:inputCheckbox>
+                      </apex:column>
+                      <apex:column value="{!a1.serialNumber}"/>
+                      
+                     <apex:column >
+                        <apex:commandlink value="Edit" action="{!showDetails}">
+                        <apex:param name="{!a1.acc1.id}" value="{!a1.acc1.id}" assignTo="{!x}"/>
+                        </apex:commandlink>
+                    </apex:column>
+                       <apex:column value="{!a1.acc1.id}"/>
+                    <apex:column value="{!a1.acc1.name}"/>
+                     <apex:column value="{!a1.acc1.industry}"/>
+                      <apex:column value="{!a1.acc1.rating}"/>
+                  <apex:column value="{!a1.acc1.createddate}"/>
+                    
+               
+                </apex:pageBlockTable>
+                   
+                <apex:commandButton action="{!deleterecord}"  value="delete" rendered="{!deletebutton}"  id="buttonid" />
+          
+               
+            </apex:pageBlockSection>
+             <apex:pageBlockSection title="Updating Particular Record" rendered="{!updatelist}" >
+            
+                 <apex:inputField value="{!acc2.name}" />
+                 <apex:inputField value="{!acc2.industry}" />
+                 <apex:inputField value="{!acc2.rating}" />
+                <apex:commandButton action="{!updateacc}" value="update record"/>
+            
+            
+            </apex:pageBlockSection>
+            
+              
+       
+         </apex:pageBlock>
+    </apex:form>
+    
+    
+    
+</apex:page>

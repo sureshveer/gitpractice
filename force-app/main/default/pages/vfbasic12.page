@@ -1,0 +1,13 @@
+<apex:page standardController="opportunity" recordSetVar="opportunities">
+   <apex:form >
+    <apex:pageBlock title="Basic task12">
+        <apex:pageBlockSection title="opportunity details">
+            <apex:pageBlockTable value="{!opportunities}" var="opp">
+                <apex:column value="{!opp.Name}"/>
+                <apex:column value="{!opp.CloseDate}"/> 
+                <apex:column value="{!opp.Amount}"/>
+</apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

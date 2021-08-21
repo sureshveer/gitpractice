@@ -1,0 +1,16 @@
+<apex:page controller="apexlivecodingjune9task16" sidebar="true" showHeader="true">
+    <apex:form >
+        <apex:pageBlock >
+         
+    <apex:pageBlockTable value="{!conlist}" var="con">
+        <apex:column value="{!con.lastname}"/>
+        <apex:column value="{!con.email}"/>
+        <apex:column value="{!con.phone}"/>
+        <apex:column value="{!con.description}"/>
+        <apex:column value="{!con.createddate}"/>
+    
+    </apex:pageBlockTable>
+            </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

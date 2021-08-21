@@ -1,0 +1,42 @@
+<apex:page controller="redirectapextask20lvcjune11">
+    
+     <apex:form id="formid">
+        <apex:pageBlock rendered="{! modestate=='detail'}">
+           
+             <apex:commandButton action="{!editcon}" value="edit"  reRender="formid"/>
+            <apex:commandButton action="{!deletecon}" value="delete"/>
+           
+            
+            <apex:pageBlockSection title="redirect LVCtask20">
+               
+               
+                <apex:outputText value="{!conrecord.id}"></apex:outputText><br/>
+                <apex:outputText value="{!conrecord.name}"></apex:outputText><br/>
+                <apex:outputText value="{!conrecord.email}"></apex:outputText><br/>
+                
+                
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+         
+       
+         
+         <apex:pageBlock rendered="{!modestate=='edit'}">
+           
+            <apex:commandButton action="{!cancelcon}" value="cancel"/>
+            <apex:commandButton action="{!savecon}" value="save"/>
+            
+            <apex:pageBlockSection title="redirect LVCtask20" id="conid">
+               
+                <apex:inputText value="{!conrecord.id}"/><br/>
+                <apex:inputText value="{!conrecord.name}"/><br/>
+                <apex:inputText value="{!conrecord.email}"/><br/>
+                
+                
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+         
+         
+         
+         
+    </apex:form>
+</apex:page>

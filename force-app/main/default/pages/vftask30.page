@@ -1,0 +1,38 @@
+<apex:page controller="task30helperclass" sidebar="false" showHeader="false">
+    
+            <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task30">
+                
+                <apex:selectList value="{!selectedact}" label="industry or rating: "  size="1">
+                    <apex:selectOptions value="{!industryandrating}"/>
+                
+                </apex:selectList>
+               
+                <br/>
+                 <apex:commandButton action="{!accts}" value="show accounts"/>
+                <br/>
+               
+           <apex:pageBlockTable value="{!acct}" var="a">
+               <apex:column value="{!a.id}"/>
+               <apex:column value="{!a.name}"/>
+               <apex:column value="{!a.industry}"/>
+               <apex:column value="{!a.rating}"/>
+                
+            </apex:pageBlockTable>
+                
+                <br/>
+                <apex:pageBlockTable value="{!cont}" var="con">
+               
+               <apex:column value="{!con.name}"/>
+               <apex:column value="{!con.id}"/>
+               
+            </apex:pageBlockTable>
+                
+                
+            </apex:pageBlockSection>
+                </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

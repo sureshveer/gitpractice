@@ -1,0 +1,43 @@
+<aura:component controller="calcoperations">
+	
+    <aura:attribute name="input1" type="integer"/>
+    <aura:attribute name="input2" type="integer"/>
+     <aura:attribute name="result" type="integer"/>
+   <h2>{!v.result}</h2>
+    
+ <aura:registerEvent name="cmpEvent" type="c:compevent"/>
+    
+    <h2>{!v.cmpEvent}</h2>
+    
+    <lightning:card  title="Caliculator">
+    <lightning:layout>
+        <lightning:layoutitem>
+             
+
+            <br/><br/><br/> 
+            <lightning:select aura:id="select1" label="input1" name="input1" value="{!v.input1}">
+                <option value="">-- Enter input1 --</option>
+                <option value="1" text="1"/>
+                <option value="2" text="2"/>
+                <option value="3" text="3"/>
+            </lightning:select>
+            
+              <lightning:select aura:id="select2" label="input2" name="input2" value="{!v.input2}" >
+                <option value="">-- Enter input2 --</option>
+                <option value="1" text="1"/>
+                <option value="2" text="2"/>
+                <option value="3" text="3"/>
+            </lightning:select>
+            
+           
+            
+            
+            
+             <lightning:button name="addition" label="add" onclick="{!c.add}" />
+            <lightning:input aura:id="result" label="result is" name="result" value="{!v.result}" />
+    
+        </lightning:layoutitem>
+    </lightning:layout>
+        </lightning:card>
+ 
+</aura:component>

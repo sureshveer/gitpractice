@@ -1,0 +1,7 @@
+<apex:page controller="apexleadconversion"  action="{!leadconversionfunction}">
+<apex:form >
+   
+    
+   <!-- <apex:param value="{!Lead.id}" assignTo="{!x}" name="leadid"/>-->
+</apex:form>
+</apex:page>

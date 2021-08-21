@@ -1,0 +1,16 @@
+<apex:page controller="task22helperclass" sidebar="false" showHeader="false">
+    
+    <apex:form >
+    <apex:pageBlock title="vf task 22">
+        <apex:pageBlockSection title="Account  details">
+            <apex:pageBlockTable value="{!acclist}" var="acc">
+                <apex:column value="{!acc.id}"/>
+                <apex:column value="{!acc.name}"/>
+                <apex:column value="{!acc.industry}"/> 
+                <apex:column value="{!acc.rating}"/> 
+</apex:pageBlockTable>
+            
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,310 @@
+<aura:component controller="AttendanceTrackingController">
+	<aura:attribute name="searchKeyword" type="String" description="search for a employee record"/>
+    <aura:attribute name="AccDetails" type="Account" description="Shows Account Details"/>
+     <lightning:layout>
+        <lightning:layoutItem size="2" padding="around-small">
+            <lightning:input type="search" value="{!v.searchKeyword}"
+                             required="true"
+                             placeholder="search employee.."
+                             aura:id="searchField"
+                             label="Employee Name"/>
+            </lightning:layoutItem>
+        <lightning:layoutItem size="2" padding="around-small">
+            <lightning:button onclick="{!c.Search}"
+                              variant="brand"
+                              label="Search"
+                              iconName="utility:search"/> 
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+     <div class="slds-p-around_medium">
+   
+     <lightning:card  title="Employee Details">
+        
+        <p class="slds-p-horizontal_small">
+           Employee Name: {!v.AccDetails.Name} 
+        </p>
+    </lightning:card>
+         </div>
+   
+    
+    
+    <!-- Table decoration-->
+     <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Emp Name">Employee Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day1">Day1</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day2">Day2</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day3">Day3</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day4">Day4</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day5">Day5</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day6">Day6</div>
+                </th>
+                 <th scope="col">
+                    <div class="slds-truncate" title="Day7">Day7</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day8">Day8</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day3">Day9</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day4">Day10</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day5">Day11</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day6">Day12</div>
+                </th>
+                 <th scope="col">
+                    <div class="slds-truncate" title="Day1">Day13</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day2">Day14</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day3">Day15</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day4">Day16</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day5">Day17</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day6">Day18</div>
+                </th>
+                 <th scope="col">
+                    <div class="slds-truncate" title="Day1">Day19</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day2">Day20</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day3">Day21</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day4">Day22</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day5">Day23</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day6">Day24</div>
+                </th>
+                 <th scope="col">
+                    <div class="slds-truncate" title="Day1">Day25</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day2">Day26</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day3">Day27</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day4">Day28</div>
+                </th>
+                  <th scope="col">
+                    <div class="slds-truncate" title="Day5">Day29</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Day6">Day30</div>
+                </th>
+                 <th scope="col">
+                    <div class="slds-truncate" title="Day6">Day31</div>
+                </th>
+            </tr>
+         </thead>
+        
+         <tbody> 
+            <!--### display all records of searchResult attribute by aura:iteration ###-->
+            
+                <tr>
+                    <td> {!v.AccDetails.Name}</td>
+                    <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day1" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day2" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day3" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day4" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day5" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day6" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day7" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day8" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day9" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day10" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day11" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day12" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day13" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day14" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day15" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day16" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day17" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day18" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day19" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day20" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day21" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day22" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day23" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day24" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day25" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day26" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day27" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day28" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day29" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day30" />
+                        </div>   
+                    </td>
+                     <td>
+                        <div  style="width:50px">
+                            <lightning:input aura:id="day31" />
+                        </div>   
+                    </td>
+                    
+                    
+                    <td>
+                          <lightning:button onclick="{!c.saveempattendance}"
+                              variant="brand"
+                              label="Save"
+                              /> 
+                    </td>
+                    
+                </tr>
+         
+         </tbody>
+    </table>
+    
+  
+</aura:component>

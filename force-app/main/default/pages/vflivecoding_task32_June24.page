@@ -1,0 +1,49 @@
+<apex:page controller="livecodingtask32helper">
+     <apex:form >    
+        <apex:pageBlock title="Live coding Visual Force Task32">
+            <apex:pageBlockSection title="Contact Details">
+                 <apex:pageMessages id="msgid" escape="true"></apex:pageMessages><br/>
+                <apex:inputText value="{!accname}" label="Account name:"/>
+                <br/>
+                <apex:commandButton action="{!SearchCon}" value="Search Contacts"/>
+                  <apex:commandButton id="conid" action="{!newcon}" value="new contact" rendered="{!newconvisible}" />
+                <br/>
+               
+              
+            
+               <apex:pageBlockTable value="{!conlist}" var="con" rendered="{!acclistvalue}">
+                   <apex:column value="{!con.id}"/>
+                 <apex:column value="{!con.name}"/>
+                    <apex:column value="{!con.email}"/>
+                         <apex:column >
+                        <apex:commandLink action="{!deletecon}" value="delete contact"> 
+                            <apex:param name="cid" value="{!con.id}" assignTo="{!x}"/>
+                        </apex:commandLink>
+                        
+                    </apex:column>
+                   
+                    
+
+                    
+                   
+                </apex:pageBlockTable>
+           
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+         
+         <apex:pageBlock id="insertconid" rendered="{!newconlist}">
+                  <apex:pageBlockSection title="insert contact">
+                <apex:inputtext value="{!lastname}" label="lastname:"/>
+                <apex:inputtext value="{!email}" label="email:"/>
+                
+                <apex:commandButton action="{!savecon}" value="save contact"/>
+                
+            </apex:pageBlockSection>
+         
+         
+         </apex:pageBlock>
+       
+         
+    </apex:form>
+    
+</apex:page>

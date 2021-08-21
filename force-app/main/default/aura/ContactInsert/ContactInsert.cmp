@@ -1,0 +1,49 @@
+<aura:component controller="apexAccountInsert">
+    <!--
+    <aura:attribute name="accobj" type="Account"/>
+     <aura:attribute name="selectedRating" type="String" access="PRIVATE"/>
+        
+         <lightning:input aura:id="accnameid" type="text" name="accname" label="Name:" value="{!v.Account.name}"/>
+    <lightning:select name="accrating" label="Rating:" aura:id="accratingId" value="{!v.selectedRating}">
+        <aura:iteration items="{!v.Account.rating}" var="accrating">
+            <option text="{!v.Account.rating}" value="{!v.Account.rating}" selected="{!accrating.selected}"/>
+        </aura:iteration>
+    </lightning:select>-->
+    
+    <aura:attribute name="aname" type="Account" default="{'sObjectType':'Account'}"/>
+    <aura:attribute name="picvalue" type="List"/>
+    <aura:attribute name="acclist" type="List"/>
+    
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+        <lightning:input label="Enter Your Name: " value="{!v.aname.Name}"/>
+        <lightning:input label="Phone Number: " value="{!v.aname.Phone}"/>
+       <lightning:select value="{!v.aname.Rating}" label="Rating">       
+            <option value="choose">Choose one...</option> 
+            <aura:iteration items="{!v.picvalue}" var="s">
+                <option value="{!s}"  text="{!s}"/>             
+            </aura:iteration> 
+        </lightning:select> 
+    <lightning:button label="Submit" onclick="{!c.go}"/>
+   <div class="slds-p-around_medium">
+    <div class="slds-grid slds-wrap">
+    <aura:iteration items="{!v.acclist}" var="acc">
+        <div class="slds-col slds-size_1-of-3">
+         <lightning:card footer="{!acc.Phone}" title="{!acc.Name}" iconName="standard:account" >
+            
+        <aura:set attribute="actions">
+            <lightning:button label="update" variant="brand"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+         <h1>{!acc.Name}</h1>
+             <h1>{!acc.Phone}</h1>
+             <h1>{!acc.Rating}</h1>
+        </p>
+       </lightning:card>
+        </div>
+    </aura:iteration>
+       </div></div>
+    
+  
+       
+    
+</aura:component>

@@ -1,0 +1,20 @@
+<apex:page standardController="Contact" recordSetVar="contacts">
+  <apex:form >  
+    <apex:pageBlock title="List of contacts">
+      <apex:pageBlockSection >
+         <apex:pageBlockTable value="{!contacts}" var="con">
+
+            <apex:column value="{!con.name}"/>
+            <apex:column value="{!con.phone}"/>
+            <apex:column value="{!con.email}"/>
+            <apex:column value="{!con.account.name}"/>
+            <apex:column value="{!con.account.type}"/>
+        
+        
+         </apex:pageBlockTable>
+          <apex:inlineEditSupport />
+      </apex:pageBlockSection>
+        <apex:commandButton value="save" action="{!Quicksave}"/>
+   </apex:pageBlock>   
+</apex:form>    
+</apex:page>

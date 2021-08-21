@@ -1,0 +1,33 @@
+<apex:page Standardcontroller="Account" sidebar="false" showHeader="false">
+     
+    <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task11">
+                <apex:inputText value="{!Account.Name}" label="Account Name:"/><br/>
+               
+                <br/>
+                 <apex:selectList value="{!Account.type}" label="Type:" size="1" >
+                    <apex:selectOption itemValue="Customer-Direct" itemLabel="Customer-Direct"/>
+                    <apex:selectOption itemValue="Customer-Channel" itemLabel="Customer-Channel"/>
+                    <apex:selectOption itemValue="Prospect" itemLabel="Prospect"/>
+                    <apex:selectOption itemValue="Installation partner" itemLabel="Installation partner"/>
+                    <apex:selectOption itemValue="Technology partner" itemLabel="Technology partner"/>
+                </apex:selectList>
+                <br/>
+                <apex:selectList value="{!Account.AccountSource}" label="Account source:" size="1">
+                    <apex:selectOption itemValue="web" itemLabel="web"/>
+                    <apex:selectOption itemValue="Phone Inquiry" itemLabel="Phone Inquiry"/>
+                    <apex:selectOption itemValue="Partner Referral" itemLabel="Partner Referral"/>
+                    <apex:selectOption itemValue="Purchased List" itemLabel="Purchased List"/>
+                    <apex:selectOption itemValue="Other" itemLabel="Other"/>
+                </apex:selectList>
+                <br/>
+                
+                <apex:inputText value="{!Account.AnnualRevenue}" label="Annual Revenue:"/><br/>
+                <apex:commandButton action="{!save}" value="save" /><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

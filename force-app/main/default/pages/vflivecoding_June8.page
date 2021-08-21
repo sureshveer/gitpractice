@@ -1,0 +1,17 @@
+<apex:page controller="apextask14livecodingjune8" sidebar="false" showHeader="false">
+    <apex:form >
+    <apex:pageBlock >
+     <apex:pageBlockSection title="Live coding JUne 8  task1">
+        <apex:selectList value="{!selectedleadsource}" size="1" label="Enter Lead sourece:">
+         <apex:selectOptions value="{!Leadsourceitems}"></apex:selectOptions>
+         </apex:selectList>
+         <br/>
+         <apex:inputText value="{!oppname}" label="Name:"/><br/>
+	         <apex:commandButton action="{!show}" value="show" reRender="msgid"/>
+        <apex:pageMessages id="msgid" escape="true"> </apex:pageMessages>
+     </apex:pageBlockSection>   
+        
+     </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

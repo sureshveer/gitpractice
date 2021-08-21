@@ -1,0 +1,20 @@
+<apex:page controller="task12helperclass" sidebar="false" showHeader="false">
+    <apex:form >
+    <apex:pageBlock title="visualforce tasks">
+        <apex:pageBlockSection title="task12">
+        <apex:selectList value="{!Accountname}" size="1">
+            <apex:selectOptions value="{!task12}">
+            </apex:selectOptions>
+        </apex:selectList>
+            <apex:commandButton action="{!show}" value="show"/>
+           <apex:pageBlockTable value="{!Acctlist}" var="acct">
+               <apex:column value="{!acct.id}"/>
+               <apex:column value="{!acct.name}"/>
+               <apex:column value="{!acct.industry}"/>
+               <apex:column value="{!acct.rating}"/>
+               
+            </apex:pageBlockTable>
+        
+            </apex:pageBlockSection>
+        </apex:pageBlock></apex:form>
+</apex:page>

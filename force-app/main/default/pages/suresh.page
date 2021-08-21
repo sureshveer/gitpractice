@@ -1,0 +1,104 @@
+<apex:page >
+    <script>
+function changestyle(){
+  var myNode1 = document.getElementById("tabledata");
+  var tds1 = myNode1 .getElementsByTagName("td");
+   
+    for(var i = 0, j = tds1.length; i < j; ++i){
+     if((tds1[i].style.fontWeight) != "bold"){
+      
+       tds1[i].style.fontWeight="bold"; 
+    }
+   else{
+       tds1[i].style.fontWeight="normal";
+    }
+}
+}
+</script>
+    <script>
+    function changecolor(){
+
+var color = document.getElementById("color").value;
+var myNode1 = document.getElementById("tabledata");
+var tds1 = myNode1.getElementsByTagName("td");
+    for(var i = 0, j = tds1.length; i < j; ++i){
+      if(color=="green" || color=="blue" || color=="violet" || color=="pink" || color=="yellow"){
+       tds1[i].style.color = color;
+      }
+    }
+
+/*
+var myNode1 = document.getElementById("firstrow");
+var tds1 = myNode1.getElementsByTagName("td");
+    for(var i = 0, j = tds1.length; i < j; ++i){
+       tds1[i].style.color = "blue";
+    }
+
+var myNode2 = document.getElementById("secondrow");
+var tds2 = myNode2.getElementsByTagName("td");
+    for(var i = 0, j = tds2.length; i < j; ++i){
+       tds2[i].style.color = "green";
+    }
+
+var myNode3 = document.getElementById("thirdrow");
+var tds3 = myNode3.getElementsByTagName("td");
+    for(var i = 0, j = tds3.length; i < j; ++i){
+       tds3[i].style.color = "yellow";
+    }
+*/
+}
+    </script>
+    <script>
+function hidetable(){
+document.getElementById("tabledata").style.visibility="hidden";
+alert("table is hided");
+}
+</script>
+
+<script>
+function showtable(){
+document.getElementById("tabledata").style.visibility="visible";
+alert("table is displayed");
+}
+</script> 
+<apex:form >
+<input type="button" value="Hide Table" onclick="hidetable();" />
+<input type="button" value="show Table" onclick="showtable();" />
+<table id="tabledata" bgcolor="orange" border="3" align="center" style="border-color:pink;">
+<tr>
+<th>empid</th>
+<th>empname</th>
+</tr>
+
+<tr id="firstrow">
+<td>1</td>
+<td>nisha</td>
+</tr>
+
+<tr id="secondrow">
+<td>2</td>
+<td>vivaan</td>
+</tr>
+
+<tr id="thirdrow">
+<td>3</td>
+<td>jack</td>
+</tr>
+
+<tr>
+<td><input type="button"  value="change color" onclick="changecolor();" /></td>
+<td><input type="button"  value="change style" onclick="changestyle();" /></td>
+</tr>
+<tr>
+<td colspan="2"><select id="color">
+  <option >change color here</option>
+  <option value="green">green</option>
+  <option value="blue">blue</option>
+  <option value="violet">violet</option>
+  <option value="pink">pink</option>
+  <option value="yellow">yellow</option>
+</select></td>
+</tr>
+</table>
+    </apex:form> 
+</apex:page>

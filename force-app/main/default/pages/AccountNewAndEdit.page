@@ -1,0 +1,65 @@
+<apex:page controller="AccountSearchPage" tabStyle="account" showHeader="true" sidebar="false">
+    <apex:pageMessages />
+    <apex:form >  
+    <apex:pageBlock title="Account Page" rendered="{!editmode}">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}"/>
+        <apex:commandButton value="Cancel" action="{!cancel}" immediate="true"/>
+        </apex:pageBlockButtons>
+      <apex:pageBlockSection >                
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel >Account Name  :</apex:outputLabel>
+              <apex:inputText value="{!ac.Name}" required="true"/>
+          </apex:pageBlockSectionItem>          
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel > Phone  :</apex:outputLabel>
+              <apex:inputText value="{!ac.phone}"/>
+          </apex:pageBlockSectionItem>
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel >Account Source  :</apex:outputLabel>
+              <apex:inputField value="{!ac.AccountSource}"/>
+          </apex:pageBlockSectionItem> 
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel >AnnualRevenue  :</apex:outputLabel>
+              <apex:inputText value="{!ac.AnnualRevenue}"/>
+          </apex:pageBlockSectionItem> 
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel >Rating  :</apex:outputLabel>
+              <apex:inputfield value="{!ac.Rating}"/>
+          </apex:pageBlockSectionItem> 
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageblock rendered="{!detailmode}">
+                 <apex:pageblockbuttons location="top">
+                <apex:commandButton value="Edit" onclick="return confirm('Are you sure?')" action="{!Accountedit}"/>
+                <apex:commandbutton value="Delete" onclick="return confirm('Are you sure delete the Account?')" action="{!delete1}"/>
+                 &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;
+                     &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;
+                     <apex:commandLink value="Return Home Page" action="{!returnpage}"/>-->
+            </apex:pageblockbuttons>
+        <apex:pageBlockSection collapsible="true" columns="2" title="Basic Details" >
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel >Account Name</apex:outputLabel>
+              <apex:outputField value="{!ac.name}"/>
+          </apex:pageBlockSectionItem>
+           <apex:pageblocksectionitem >
+              <apex:outputLabel >Phone  :</apex:outputLabel>
+              <apex:outputField value="{!ac.Phone}"/>
+            </apex:pageblocksectionitem>
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel > Rating  :</apex:outputLabel>
+              <apex:outputfield value="{!ac.rating}"/>
+          </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+              <apex:outputLabel >AccountSource  :</apex:outputLabel>
+              <apex:outputText value="{!ac.AccountSource}"/>
+          </apex:pageBlockSectionItem>
+          <apex:pageBlockSectionItem >
+              <apex:outputLabel >AnnualRevenue  :</apex:outputLabel>
+              <apex:outputfield value="{!ac.AnnualRevenue}"/>
+          </apex:pageBlockSectionItem> 
+            
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

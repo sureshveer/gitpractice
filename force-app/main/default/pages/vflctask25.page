@@ -1,0 +1,49 @@
+<apex:page controller="apexlctask25">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+              <apex:commandButton action="{!editcon}" value="edit" rendered="{!editbutton}"/>
+                <apex:commandButton action="{!deletecon}" value="delete"  rendered="{!delbutton}"/>
+                 <apex:commandButton action="{!savecon}" value="save"  rendered="{!savebutton}"/>
+            <apex:pageBlockSection columns="1" title="Contacts list" >
+                <apex:inputText value="{!accname}" label="Account Name:"/>
+            <apex:commandButton action="{!showcontacts}" value="show contacts"/>
+                
+                 <apex:pageBlockTable value="{!conwraplist}" var="con" rendered="{!contable}" id="tableid">
+                        <apex:column >
+                          <apex:inputCheckbox value="{!con.selected}"> 
+                          </apex:inputCheckbox>
+                      </apex:column>
+                        <apex:column value="{!con.c1.lastname}"/>
+                    <apex:column value="{!con.c1.email}"/>
+                       
+                        
+                </apex:pageBlockTable>
+                
+                 <apex:pageBlockTable value="{!conlist}" var="con" rendered="{!conview}">
+                        <apex:column >
+                            <apex:inputText value="{!con.lastname}" label="lastname:"/>
+                      </apex:column>
+                     <apex:column >
+                            <apex:inputText value="{!con.email}" label="email:"/>
+                      </apex:column>
+                       
+                   
+              
+                
+                </apex:pageBlockTable>
+                
+                
+                
+                 <apex:inputCheckbox value="{!selected}" rendered="{!checkbox1}"> 
+                              <apex:actionSupport action="{!checkitem}" event="onchange" />
+                          </apex:inputCheckbox>
+                
+              
+                
+            </apex:pageBlockSection>
+               
+         </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

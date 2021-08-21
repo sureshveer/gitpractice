@@ -1,0 +1,35 @@
+<apex:page controller="aplexlivetask3helper">
+    
+    <apex:form >    
+        <apex:pageBlock title="Live coding Visual Force Task3">
+            <apex:pageMessages id="msgid" escape="true"></apex:pageMessages><br/>
+            <apex:pageBlockSection title="Case Details">
+                 
+                <apex:inputText value="{!accname}" label="Account name:"/>
+                <br/>
+                <apex:selectList value="{!selectedleadstatus}" size="1" label="status:">
+                    <apex:selectOptions value="{!leadstatuslist}"/>
+                    
+                </apex:selectList>	
+                <br/>
+                <apex:commandButton action="{!Searchcase}" value="Search case"/>
+                <apex:commandButton action="{!deletecase}" id="deleteid" value="delete cases" rendered="{!caselistvalue}"/>
+                
+                <apex:pageBlockTable value="{!acctwrapperlist}" var="acctwrap" rendered="{!caselistvalue}">
+                    
+                    <apex:column > 
+                        <apex:inputCheckbox value="{!acctwrap.selected}" />
+                    </apex:column> 
+                    
+                    <apex:column value="{!acctwrap.c.id}"/>
+                    <apex:column value="{!acctwrap.c.status}"/>
+                 
+                    
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

@@ -1,0 +1,99 @@
+<apex:page controller="apextask1usingvf" sidebar="false" showHeader="false">
+    <apex:form >
+        
+        <apex:pageBlock title="Apex Tasks">
+            <apex:pageBlockSection title="Mytask">
+                <apex:inputText value="{!firstinput}" label="enter first input:"/><br/>
+                <apex:inputText value="{!secondinput}" label="enter second input:"/><br/>
+               
+                
+                
+                <apex:selectList value="{!operations}" label="enter operation:" >
+                    <apex:selectOption itemValue="addition" itemLabel="addition"/>
+                    <apex:selectOption itemValue="subtract" itemLabel="subtract"/>
+                    <apex:selectOption itemValue="multiply" itemLabel="multiply"/>
+                    <apex:selectOption itemValue="division" itemLabel="division"/>
+                    <apex:selectOption itemValue="remainder" itemLabel="remainder"/>
+                </apex:selectList>
+                <br/>
+                
+                <apex:commandButton action="{!operation}" value="submit" /><br/>
+                <apex:inputText value="{!result}" label="result is:"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+        
+        <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task1">
+                <h1>
+                    Hello World
+                </h1>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+            </apex:form>
+        <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task5">
+                <apex:inputText value="{!subeng}" label="enter English Marks:"/><br/>
+                <apex:inputText value="{!subtel}" label="enter Telugu Marks:"/><br/>
+                <apex:inputText value="{!submat}" label="enter Maths Marks:"/><br/>
+                <apex:inputText value="{!subsoc}" label="enter Social Marks:"/><br/>
+                <apex:inputText value="{!subsci}" label="enter Science Marks:"/><br/>
+                
+                <apex:commandButton action="{!marks}" value="submit" /><br/>
+                <apex:inputText value="{!totalmarks}" label="Total Marks:"/>
+                <apex:inputText value="{!percentage}" label="percentage is:"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+        
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task6">
+                <apex:inputText value="{!samplestring}" label="enter Sample String:"/><br/>
+                <apex:commandButton action="{!task6}" value="submit" /><br/>
+                <apex:outputText value="{!stringpalindrome}" label="String is palindrome or not:"></apex:outputText><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+        
+        <apex:form >
+            
+             <script>
+        function GreatestNumber(){
+              document.getElementById("GreatestNumber").value=10; 
+    }
+    
+    </script>
+            
+         <apex:pageBlock >
+            <apex:pageBlockSection title="task7">
+                <apex:inputText id="input1" label="enter input1:" /><br/>
+                <apex:inputText id="input2" label="enter input2:"/><br/>
+                <apex:inputText id="input3" label="enter input3:"/><br/>
+                <apex:commandButton value="submit" onclick="GreatestNumber()"/><br/>
+                <apex:inputText id="GreatestNumber" label="Greatest Number is:"/><br/>
+             </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+        
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task2">
+                <apex:inputText value="{!firststring}" label="enter first string:"/><br/>
+                <apex:inputText value="{!secondstring}" label="enter second string:"/><br/>
+                <apex:commandButton action="{!task2logic}" value="submit"/><br/>
+                
+                <apex:outputText value="{!concatstring}" label="After concating two strings:"></apex:outputText><br/>
+                <apex:outputText value="{!comparestring}" label="After comparing size:"></apex:outputText><br/>
+                <apex:outputText value="{!capitalstring}" label="converting to capital strings:"></apex:outputText><br/>
+                <apex:outputText value="{!totalchars}" label="total size of two strings:"></apex:outputText><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

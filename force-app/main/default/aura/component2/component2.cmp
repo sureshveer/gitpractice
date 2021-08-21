@@ -1,0 +1,17 @@
+<aura:component  controller="calcoperations">
+	
+    <aura:attribute name="name" type="string"/>
+    <aura:attribute name="result" type="string"/>
+    
+    <lightning:card  title="Caliculator">
+    <lightning:layout>
+        <lightning:layoutitem>
+            <lightning:input aura:id="sname" placeholder="enter name" label="Name:" name="name" value="{!v.name}" onchange="{!c.sample}"></lightning:input>
+            
+        </lightning:layoutitem>
+        </lightning:layout>
+    </lightning:card>
+    <h2>{!v.name}</h2>
+    <h2>{!v.result}</h2>
+   
+</aura:component>

@@ -1,0 +1,17 @@
+<apex:page standardController="Account" extensions="vftask4helperclass">
+     <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task4">
+                <apex:pageBlockTable value="{!acct}" var="a">
+                    <apex:column value="{!a.id}"/>
+                     <apex:column value="{!a.name}"/>
+                    <apex:column value="{!a.AnnualRevenue}"/>
+                    <apex:column value="{!a.AccountNumber}"/>
+                    <apex:column value="{!a.Industry}"/>
+                    <apex:column value="{!a.Description}"/>
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

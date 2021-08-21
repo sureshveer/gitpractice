@@ -1,0 +1,583 @@
+<apex:page controller="JsController">
+    <script>
+        function AddandPercentage(s1,s2,s3,s4,s5){
+        var a=document.getElementById(s1).value;
+        var b=document.getElementById(s2).value;
+        var c=document.getElementById(s3).value;
+        var d=document.getElementById(s4).value;
+        var e=document.getElementById(s5).value;    
+        var totalmarks=parseInt(a) + parseInt(b)+parseInt(c) + parseInt(d)+parseInt(e);
+         var percentage=totalmarks/5;
+            // document.getElementById("percentage").value=percentage;
+             alert('Total Marks:'+' '+totalmarks+' '+'Percentage:' +percentage);
+
+        }
+    </script>
+    <script>
+    //task 3 add two numbers
+    function addtwonos(){
+         var a=document.getElementById('{!$Component.formid.block2id.section3id.no1}').value;
+        var b=document.getElementById('{!$Component.formid.block2id.section3id.no2}').value;
+      var total=parseInt(a) + parseInt(b);													
+        alert('sum of '+' '+a +' '+'and'+' '+b+' '+'is'+' '+total);
+        }
+
+    </script>
+    <script>
+    function evenorodd(){
+         var a=parseInt(document.getElementById('{!$Component.formid.block2id.section8id.input1}').value);
+        if(a%2 == 0){
+            window.alert(a+ "is even number");
+        }
+        else{
+            window.alert(a+ "is odd number");
+            
+        }
+        
+    }
+    
+    </script>
+    
+     <script>
+    function GreatestNumber(){
+
+        var a=parseInt(document.getElementById('{!$Component.formid.block2id.section7id.no1}').value);
+        var b=parseInt(document.getElementById('{!$Component.formid.block2id.section7id.no2}').value);
+        var c=parseInt(document.getElementById('{!$Component.formid.block2id.section7id.no3}').value);
+
+        if(a>b && a>c){
+        alert(a+"is greatest number");
+        }
+        else if(b>c){
+        alert(b+"is greatest number");  
+        }
+        else{
+        alert(c+"is greatest number");    
+        }   
+    }
+    </script>
+    <script>  
+    function operation(x1,y1,z){ 
+        var x=(document.getElementById(x1).value); 
+        var y=(document.getElementById(y1).value);
+        var z1=(document.getElementById(z).value);
+       
+        if(z1=="add"){
+            alert(parseInt(x)+parseInt(y));
+            
+        }
+        else if(z1=="sub"){
+            alert(parseInt(x)-parseInt(y));
+        }
+            else if(z1=="mul"){
+                alert(parseInt(x)*parseInt(y));
+            }
+                else if(z1=="div"){
+                    alert(parseInt(x)/parseInt(y));
+                }
+                    else if(z1=="mod"){
+                        alert(parseInt(x)%parseInt(y));
+                    }
+    }
+    </script>
+    <script>
+    function stringlen(a1){ 
+        //alert("devika");
+        var x=(document.getElementById(a1).value); 
+        alert(x +' '+ "length is"+' '+  x.length);
+    }
+    </script>
+   
+    <script>
+    function SwapNumbers(){
+       
+        var a=parseInt(document.getElementById('{!$Component.formid.block2id.section11id.no1}').value);
+        var b=parseInt(document.getElementById('{!$Component.formid.block2id.section11id.no2}').value);
+        var c=parseInt(document.getElementById('{!$Component.formid.block2id.section11id.no3}').value);
+        temp=a;
+        a=b;
+        b=c;
+        c=temp;
+        if(a!=0 && b!=0 && c!=0){
+            document.getElementById('{!$Component.formid.block2id.section11id.no1}').value=a;
+            document.getElementById('{!$Component.formid.block2id.section11id.no2}').value=b;
+            document.getElementById('{!$Component.formid.block2id.section11id.no3}').value=c;             
+            alert("a"+a+" "+"b"+b+" "+"c"+c);
+        }
+    }
+    </script>
+    
+     <script>
+    function AscendingOrder(){
+        
+        var a=parseInt(document.getElementById('{!$Component.formid.block2id.section11id.no1}').value);
+        var b=parseInt(document.getElementById('{!$Component.formid.block2id.section11id.no2}').value);
+        var c=parseInt(document.getElementById('{!$Component.formid.block2id.section11id.no3}').value);
+          var temp;
+        var numbers=[a,b,c];
+         for(var i=0;i<numbers.length;i++){
+            for(var j=i+1;j<numbers.length;j++){
+                if(numbers[i]>numbers[j]){
+                    temp=numbers[i];
+                    numbers[i]=numbers[j];
+                    numbers[j]=temp;
+                }
+            }
+        }  
+        alert("Ascending order is"+numbers);
+         document.getElementById('{!$Component.formid.block2id.section11id.no1}').value=numbers[0];
+          document.getElementById('{!$Component.formid.block2id.section11id.no2}').value=numbers[1];
+           document.getElementById('{!$Component.formid.block2id.section11id.no3}').value=numbers[2];  
+    }
+    </script>
+    
+    <script>
+    function checking(){
+        
+         var num=parseInt(document.getElementById('{!$Component.formid.block2id.section6id.no1}').value); 
+       
+        
+        var rev=num;
+        var r=0;
+        var sum=0;
+        
+        while(num>0){
+            r=num % 10;
+            sum=(sum*10)+r;
+            num=parseInt(num/10);
+           
+        }
+        
+        if(rev==sum){
+            alert(sum+'is palindrome'); 
+            // return sum+'is palindrome';  
+        }
+        else{
+           alert(sum+'is not a palindrome');
+            //  return sum+'is not palindrome';
+            }
+         
+        }
+    </script>
+    
+    <script>
+     function fibseries(){
+             var num=document.getElementById('{!$Component.formid.block2id.section14id.input1}').value;
+         var num1=0; 
+         var num2=1; 
+         var sum; 
+         var i=0; 
+         var arraynum=[num1,num2];
+         for (i = 0; i < num; i++)  
+         { 
+             sum=num1+num2;
+             arraynum.push(sum);
+             num1=num2; 
+             num2=sum; 
+         }   
+         alert ('fibinocci series is'+arraynum);
+          }
+    </script>
+    
+     <script>
+     function reverselistofstrings(){
+             var z1=document.getElementById('{!$Component.formid.block2id.section16id.input1}').value;
+             var z2=document.getElementById('{!$Component.formid.block2id.section16id.input2}').value;
+          var z3=document.getElementById('{!$Component.formid.block2id.section16id.input3}').value;
+         var stringarray=[z1,z2,z3];
+         var reversestringarray=[];
+         var reverse=' ';
+                for(var i=0;i<=stringarray.length;i++){
+                  
+                    reverse=' ';
+                    for(var j=stringarray[i].length-1;j>=0;j--){
+                        reverse=reverse+stringarray[i].charAt(j);
+                       
+                    }
+                    reversestringarray.push(reverse);
+                    alert(reversestringarray);	
+                }
+      
+        
+          }
+    </script>
+    <script>
+     function comparestrings(){
+             var z1=document.getElementById('{!$Component.formid.block2id.section18id.input1}').value;
+             var z2=document.getElementById('{!$Component.formid.block2id.section18id.input2}').value;
+            if(z1.length>z2.length){
+              alert(z1+' '+'is greater in length');
+                }
+            else if(z1.length<z2.length){
+                alert(z2+' '+'is greater in length');
+            }
+         else{
+             alert(z1+' '+'and'+z2+' '+'are equal');
+         }
+          }
+    </script>
+      <script>
+        function printmsg(){
+             var z1=document.getElementById('{!$Component.formid.block2id.section20id.input1}').value;
+             
+            var addingitem = [];
+                 for(var i=1;i<=5;i++){
+                      addingitem.push(i+'Time'+' '+z1);  
+                 }
+            alert(addingitem);
+          }
+    </script>
+    <script>
+       function LogicalOperations(){ 
+       
+        var x=document.getElementById('{!$Component.formid.block2id.section21id.number1}').value; 
+        var y=document.getElementById('{!$Component.formid.block2id.section21id.number2}').value;
+        var z1=document.getElementById('{!$Component.formid.block2id.section21id.operator}').value;
+           
+           switch(z1) {
+               case "add":
+                   alert(parseInt(x)+parseInt(y));
+                   break;
+               case 'sub' :
+                   alert(parseInt(x)-parseInt(y));
+                   break;
+               case 'mul' :
+                   alert(parseInt(x)*parseInt(y));
+                   break;
+               case 'div' :
+                   alert(parseInt(x)/parseInt(y));
+                   break;
+               case 'mod' :
+                   alert(parseInt(x)%parseInt(y));
+                   break;
+               default:
+                   alert('invalid selection');
+                    break;
+           }
+           }
+           </script>
+    
+     <script>
+        function factorial(){
+             var n=document.getElementById('{!$Component.formid.block2id.section23id.input1}').value;
+            let answer = 1;
+            if (n == 0 || n == 1){
+                return answer;
+            }else{
+                for(var i = n; i >= 1; i--){
+                    answer = answer * i;
+                }
+                alert('factorial of a Number'+' '+n+' '+'is'+' '+answer);
+           
+          }
+            }
+    </script>
+    
+     <script>
+        function uppertolower(){
+             var z1=document.getElementById('{!$Component.formid.block2id.section25id.input1}').value;
+                 if(z1==z1.touppercase()){
+                   alert(z1.toLowercase());    
+                 }
+            else if(z1==z1.tolowercase()){
+                      alert(z1.toUppercase());
+                    }
+           
+          }
+    </script>
+    
+     <script>
+        function alphabetornot(){
+             var z1=document.getElementById('{!$Component.formid.block2id.section26id.input1}').value;
+               var z2=z1.split("");
+            var addingitem = [];
+                 for(var i=0;i<z2.length;i++){    
+                   if((z2[i]>="A" && z2[i]<="Z") || (z2[i]>="a" && z2[i]<="z")){
+                           addingitem.push(z2[i]+' '+'is a alphabhet');
+                   }
+                     else if(z2[i]>="0" && z2[i]<="9"){
+                          addingitem.push(z2[i]+' '+'is a number');
+                     }
+                     else{
+                      addingitem.push(z2[i]+' '+'is a special character');
+                     }
+                 }
+            alert(addingitem);
+          
+          }
+    </script>
+    
+     <script>
+        function areaofEquilateral(){
+             var z1=parseInt(document.getElementById('{!$Component.formid.block2id.section27id.input1}').value);
+            var area=(Math.Sqrt(3)/4)*z1*z1;
+            alert('area of equilateral triangle is'+' '+area);
+          
+          }
+    </script>
+
+     <script>
+        function vowelorconsonant(){
+             var z1=document.getElementById('{!$Component.formid.block2id.section28id.input1}').value;
+            var z2=z1.split("");
+            var addingitem = [];
+                 for(var i=0;i<z2.length;i++){    
+                   if(z2[i]=="a" ||z2[i]=="e"||z2[i]=="i"||z2[i]=="o"||z2[i]=="u"){
+                           addingitem.push(z2[i]+' '+'is a vowel');
+                   }
+                     else{
+                          addingitem.push(z2[i]+' '+'is a consonant');
+                     }
+                 }
+            alert(addingitem);
+          
+          }
+    </script>
+     <script>
+        function Printnaturalnumbers(){
+             var z1=parseInt(document.getElementById('{!$Component.formid.block2id.section29id.input1}').value);
+            var addingitem = [];
+                  for(var i=1;i<z1;i++){
+                      addingitem.push(i);    
+                  }
+            alert(addingitem);
+          
+          }
+    </script>
+    
+        <script>
+        function comparetwostrings(){
+             var z1=document.getElementById('{!$Component.formid.block2id.section30id.input1}').value;
+             var z2=document.getElementById('{!$Component.formid.block2id.section30id.input2}').value;
+            if(z1==z2){
+              alert(z1+' '+'and'+' '+z2+'are equal');
+                }
+            else{
+                alert(z1+' '+'and'+' '+z2+'are not equal');
+            }
+          }
+    </script>
+      <script>
+        function liststrlen(z){
+             var z1=document.getElementById(z).value;
+              alert(z1 +' '+ "length is"+' '+  z1.length);
+          }
+    </script>
+     <style>
+    #button1{
+        width:100%;
+        
+        }
+     h2{
+        color:brown;
+        }
+       h1{
+        color:blue;
+        text-align:center;
+        } 
+        #firstnumber{
+       width:100%;
+        }
+        #secondnumber{
+       width:100%;
+        }
+        #thirdnumber{
+       width:100%;
+        }
+    
+    </style>
+    <apex:form id="formid"> 
+        <apex:pageBlock id="Block1id">
+            <apex:pageBlockSection >
+           <apex:selectlist id="index" size="1" value="{!selectedTask}" label="Enter Task Number">
+                   <apex:selectOptions value="{!selecttasklist}"></apex:selectOptions>
+               <apex:actionSupport event="onchange" reRender="formid" action="{!showTasksection}"/>
+                </apex:selectlist>
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+         
+        
+        
+        <apex:pageBlock title="JavaScript Tasks"  id="Block2id" rendered="{!RenderBlock}">
+            
+              <apex:pageBlockSection title="task1->Hello World" rendered="{!Rendersection=='Task1to5'}" columns="1" id="section1id" >
+                <apex:outputText >Hello World</apex:outputText>
+             </apex:pageBlockSection>
+            
+            
+             <apex:pageBlockSection title="Task3->Add Two Numbers" columns="1" id="section3id" rendered="{!Rendersection=='Task1to5'}">
+                 <apex:inputtext id="no1" label="enter any number" />
+                <apex:inputtext id="no2" label="enter any number" />
+                   <apex:commandButton value="addtwonos" id="result1" onclick="addtwonos()"/>
+             </apex:pageBlockSection>
+            
+            
+            <apex:pageBlockSection title="task5->Total Marks And Percentage " rendered="{!Rendersection=='Task1to5'}" columns="1" id="section5id">
+                 <apex:inputtext id="no1" label="English:" />
+                 <apex:inputtext id="no2" label="Telugu:" />
+                 <apex:inputtext id="no3" label="Maths:" />
+                 <apex:inputtext id="no4" label="Science:" />
+                 <apex:inputtext id="no5" label="Social:" />
+  <apex:commandButton value="Result" id="result" onclick="AddandPercentage('{!$Component.no1}','{!$Component.no2}','{!$Component.no3}','{!$Component.no4}','{!$Component.no5}')"/>        
+            </apex:pageBlockSection>
+            
+            
+              <apex:pageBlockSection title="task6->String palindrome " rendered="{!Rendersection=='Task6to10'}" columns="1" id="section6id">
+               <apex:inputtext id="no1" label="enter any number" />
+               <apex:commandButton value="result"  onclick="checking()"/>
+             </apex:pageBlockSection>
+            
+            
+               <apex:pageBlockSection title="task7->GreatestNumber " rendered="{!Rendersection=='Task6to10'}" columns="1" id="section7id">
+               <apex:inputtext id="no1" label="enter First number" />
+                <apex:inputtext id="no2" label="enter second number" />
+                <apex:inputtext id="no3" label="enter Third number" />
+                <apex:commandButton value="result" id="result" onclick="GreatestNumber()"/>
+           </apex:pageBlockSection>
+            
+            
+            <apex:pageBlockSection title="Task8->Even or Odd" columns="1" id="section8id" rendered="{!Rendersection=='Task6to10'}">
+                <apex:inputtext id="input1" label="enter any number" />
+                <apex:commandButton value="Result" id="result1" onclick="evenorodd()"/>
+            </apex:pageBlockSection>
+            
+        
+        
+     
+     
+        
+          <apex:pageBlockSection title="task9->Length Of A String " rendered="{!Rendersection=='Task6to10'}" columns="1" id="section9id" >
+                <apex:inputtext id="string1" label="enter any string" />
+                <apex:commandButton value="result" id="result" onclick="stringlen('{!$Component.string1}')"/>
+            </apex:pageBlockSection>
+       
+          
+       
+        
+        
+            <apex:pageBlockSection title="task10->Caliculation of Two Numbers " rendered="{!Rendersection=='Task6to10'}" columns="1" id="section10id">
+                <apex:inputtext id="number1" label="Enter First Number"/>
+                <apex:inputtext id="number2" label="Enter Second Number"/>
+                <apex:selectlist id="operator" size="1" label="Enter Operation">
+                    <apex:selectOption itemLabel="+" itemValue="add"/>
+                    <apex:selectOption itemLabel="-" itemValue="sub"/>
+                    <apex:selectOption itemLabel="*" itemValue="mul"/>
+                    <apex:selectOption itemLabel="/" itemValue="div"/>
+                    <apex:selectOption itemLabel="%" itemValue="mod"/>
+                </apex:selectlist>
+                <apex:commandButton value="result" id="result" onclick="operation('{!$Component.number1}','{!$Component.number2}','{!$Component.operator}');"/>
+                
+            </apex:pageBlockSection>
+            
+            
+           
+          
+        
+            
+            
+       <apex:pageBlockSection title="task 11,13->Ascending Order,Swapping Numbers " rendered="{!Rendersection=='Task11to15' }" columns="1" id="section11id">
+                 <apex:inputtext id="no1" label="enter First number" />
+                <apex:inputtext id="no2" label="enter Second number" />
+                <apex:inputtext id="no3" label="enter Third number" />
+                <apex:commandButton value="SwapNumbers" id="result" onclick="SwapNumbers()"/>
+                <apex:commandButton id="button1" value="AscendingOrder"  onclick="AscendingOrder()" />
+        </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task14->Printing Fibinocci series" rendered="{!Rendersection=='Task11to15'}" columns="1" id="section14id">
+                <apex:inputtext id="input1" label="enter any Number" />
+                <apex:commandButton value="result" id="result" onclick="fibseries()"/>
+            </apex:pageBlockSection>
+            
+            
+       
+            <apex:pageBlockSection title="task15->List of Strings length using dropdown" rendered="{!Rendersection=='Task11to15'}" columns="1" id="section15id">
+                 <apex:selectlist id="listfstrings" size="1" label="select any string">
+                     <apex:selectOption itemLabel="Select Options" itemValue=""/>
+                    <apex:selectOption itemLabel="Hello" itemValue="Hello"/>
+                    <apex:selectOption itemLabel="Good" itemValue="Good"/>
+                    <apex:selectOption itemLabel="Happy" itemValue="Happy"/>
+                    <apex:selectOption itemLabel="Google" itemValue="Google"/>
+                    
+
+                </apex:selectlist>
+                 <apex:commandButton value="result" id="result" onclick="liststrlen('{!$Component.listfstrings}')"/>
+
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task16->Reverse List Of Strings" rendered="{!Rendersection=='Task16to20'}" columns="1" id="section16id">
+                <apex:inputtext id="input1" label="enter first string" />
+                  <apex:inputtext id="input2" label="enter second string" />
+                  <apex:inputtext id="input3" label="enter third string" />
+                <apex:commandButton value="result" id="result" onclick="reverselistofstrings()"/>
+            </apex:pageBlockSection>
+            
+              <apex:pageBlockSection title="task18->Compare two strings" rendered="{!Rendersection=='Task16to20'}" columns="1" id="section18id">
+                <apex:inputtext id="input1" label="enter any String" />
+                  <apex:inputtext id="input2" label="enter any String" />
+                <apex:commandButton value="result" id="result" onclick="comparestrings()"/>
+            </apex:pageBlockSection>
+            
+              <apex:pageBlockSection title="task20->Printing msg 5 times" rendered="{!Rendersection=='Task16to20'}" columns="1" id="section20id">
+                <apex:inputtext id="input1" label="enter any String" />
+                <apex:commandButton value="result" id="result" onclick="printmsg()"/>
+            </apex:pageBlockSection>
+            
+            
+             <apex:pageBlockSection title="task21->Logical Operations Using Switch Case" rendered="{!Rendersection=='Task21to25'}" columns="1" id="section21id">
+                <apex:inputtext id="number1" label="enter first Number" />
+                  <apex:inputtext id="number2" label="enter second Number" />
+                  <apex:selectlist id="operator" size="1" label="Enter Operation">
+                    <apex:selectOption itemLabel="+" itemValue="add"/>
+                    <apex:selectOption itemLabel="-" itemValue="sub"/>
+                    <apex:selectOption itemLabel="*" itemValue="mul"/>
+                    <apex:selectOption itemLabel="/" itemValue="div"/>
+                    <apex:selectOption itemLabel="%" itemValue="mod"/>
+                </apex:selectlist>
+                 
+                <apex:commandButton value="result" id="result" onclick="LogicalOperations()"/>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task23->Factorial of a Number" rendered="{!Rendersection=='Task21to25'}" columns="1" id="section23id">
+                <apex:inputtext id="input1" label="enter any Number" />
+                <apex:commandButton value="result" id="result" onclick="factorial()"/>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task25->Uppercase to Lowercase" rendered="{!Rendersection=='Task21to25'}" columns="1" id="section25id">
+                <apex:inputtext id="input1" label="enter any string" />
+                <apex:commandButton value="result" id="result" onclick="uppertolower()"/>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task26->Character is aplhabet or not" rendered="{!Rendersection=='Task26to30'}" columns="1" id="section26id">
+                <apex:inputtext id="input1" label="enter any input" />
+                <apex:commandButton value="result" id="result" onclick="alphabetornot()"/>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task27->Area Of Equilateral Triangle" rendered="{!Rendersection=='Task26to30'}" columns="1" id="section27id">
+                <apex:inputtext id="input1" label="enter side parameter" />
+                <apex:commandButton value="result" id="result" onclick="areaofEquilateral()"/>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task28->Checking Given Alphabets are vowel or Consonant" rendered="{!Rendersection=='Task26to30'}" columns="1" id="section28id">
+                <apex:inputtext id="input1" label="enter any string" />
+                <apex:commandButton value="result" id="result" onclick="vowelorconsonant()"/>
+            </apex:pageBlockSection>
+            
+              <apex:pageBlockSection title="task29->Printing 'N' NaturalNumbers" rendered="{!Rendersection=='Task26to30'}" columns="1" id="section29id">
+                <apex:inputtext id="input1" label="enter any number" />
+                <apex:commandButton value="result" id="result" onclick="Printnaturalnumbers()"/>
+            </apex:pageBlockSection>
+            
+             <apex:pageBlockSection title="task30->Comparing Two Strings Equal or Not " rendered="{!Rendersection=='Task26to30'}" columns="1" id="section30id">
+                <apex:inputtext id="input1" label="enter first string" />
+                 <apex:inputtext id="input2" label="enter second string" />
+                <apex:commandButton value="result" id="result" onclick="comparetwostrings()"/>
+            </apex:pageBlockSection>
+            
+            
+       
+        </apex:pageBlock>
+       
+       
+  </apex:form>
+</apex:page>

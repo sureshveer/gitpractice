@@ -1,0 +1,22 @@
+<apex:page controller="task7helperclass" sidebar="false" showHeader="false">
+    <apex:form >
+    <apex:pageBlock title="visual force tasks">
+        <apex:pageBlockSection title="task7">
+       <apex:selectList value="{!country}" label="Country:" multiselect="true" >
+                      <apex:selectOptions value="{!countries}"/>
+            </apex:selectList>
+             <br/>
+                
+                <apex:commandButton action="{!task7}" value="Show States" /><br/>
+             
+                 <apex:selectList size="1" label="states">
+          <apex:selectOptions value="{!options1}" ></apex:selectOptions>
+      </apex:selectList>
+            
+            
+            
+           </apex:pageBlockSection>
+           </apex:pageBlock>
+        </apex:form>
+        
+    </apex:page>

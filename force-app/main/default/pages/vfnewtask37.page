@@ -1,0 +1,13 @@
+<apex:page controller="apexhelpertask37">
+    
+     <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task37 details">
+                <apex:selectList value="{!selectedaccsource}">
+                    <apex:selectOptions value="{!accsourcelist}"/>
+                    <apex:commandButton action="{!searchfileds}" value="search"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

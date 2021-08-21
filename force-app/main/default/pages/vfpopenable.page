@@ -1,0 +1,17 @@
+<apex:page controller="popupenable" >
+
+<script>
+
+function func()
+
+{
+
+alert('function calling');
+
+}
+
+</script>
+
+<apex:outputText value="{!callfunc}" escape="false"></apex:outputText>
+<apex:outputText value="{JavaScript}" ></apex:outputText>
+</apex:page>

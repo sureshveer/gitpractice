@@ -1,0 +1,21 @@
+<apex:page controller="task18helperclass" sidebar="false" showHeader="false">
+     <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task18">
+                <apex:inputText value="{!startdate}" label="enter start date"/><br/>
+                <apex:inputText value="{!enddate}" label="enter end date"/><br/>
+                <apex:commandButton action="{!task18}" value="show cases"/>
+                <br/>
+                
+                 <apex:pageBlockTable value="{!caselist}" var="c">
+               <apex:column value="{!c.id}"/>
+               <apex:column value="{!c.accountid}"/>
+               <apex:column value="{!c.ContactPhone}"/>
+               <apex:column value="{!c.ClosedDate}"/>
+               
+            </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

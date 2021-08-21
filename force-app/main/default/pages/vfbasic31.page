@@ -1,0 +1,14 @@
+<apex:page standardController="Account" extensions="apexvfbasic31">
+    
+    <apex:form >
+    <apex:pageBlock title="vf task 31">
+        <apex:pageBlockSection title="insert Account">
+            <apex:inputText value="{!accname}" label="Account name:"/><br/>
+             <apex:inputText value="{!industry}" label="industry:"/><br/>
+             <apex:inputText value="{!rating}" label="rating:"/><br/>
+             
+            <apex:commandButton action="{!saveacc}" value="save account"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

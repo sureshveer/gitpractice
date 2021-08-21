@@ -1,0 +1,56 @@
+<apex:page controller="apexlivecodingjune9task17">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection title=" live coding task17">
+            
+            
+              <apex:selectList value="{!selectedindustry}" label="accountsource:" size="1">
+              <apex:selectOptions value="{!accindustrylist}"></apex:selectOptions>
+            </apex:selectList><br/>
+            
+            <apex:selectList value="{!selectedaccsource}" label="accountsource:" size="1">
+              <apex:selectOptions value="{!accsourcelist}"></apex:selectOptions>
+            </apex:selectList><br/>
+           
+            <apex:commandButton action="{!result}" value="show result" /><br/>
+            
+           <apex:pageBlockTable value="{!bothacclist}" var="acc">
+                <apex:column value="{!acc.name}"/>
+                <apex:column value="{!acc.industry}"/>
+                  <apex:column value="{!acc.phone}"/>
+               <apex:column value="{!acc.accountnumber}"/>
+               <apex:column value="{!acc.rating}"/>
+            </apex:pageBlockTable>
+            
+            <br/>
+            
+            
+             <apex:pageBlockTable value="{!bothacclist}" var="acc">
+                <apex:column value="{!acc.name}"/>
+                <apex:column value="{!acc.accountsource}"/>
+                  <apex:column value="{!acc.billingcity}"/>
+               <apex:column value="{!acc.accountnumber}"/>
+               <apex:column value="{!acc.annualrevenue}"/>
+                     
+            </apex:pageBlockTable>
+            
+            <br/>
+
+
+ <apex:pageBlockTable value="{!bothacclist}" var="acc">
+                <apex:column value="{!acc.name}"/>
+                <apex:column value="{!acc.accountsource}"/>
+                  <apex:column value="{!acc.billingcity}"/>
+               <apex:column value="{!acc.accountnumber}"/>
+               <apex:column value="{!acc.annualrevenue}"/>
+        <apex:column value="{!acc.industry}"/>
+                  <apex:column value="{!acc.phone}"/>
+               <apex:column value="{!acc.accountnumber}"/>
+               <apex:column value="{!acc.rating}"/>
+            </apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

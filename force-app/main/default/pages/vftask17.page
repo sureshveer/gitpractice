@@ -1,0 +1,23 @@
+<apex:page controller="task17helperclass" sidebar="false" showHeader="false">
+          <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task17">
+                <apex:inputText value="{!startamount}" label="enter start amount"/><br/>
+                <apex:inputText value="{!endamount}" label="enter end amount"/><br/>
+                <apex:commandButton action="{!task17}" value="show opps"/>
+                <br/>
+               
+           <apex:pageBlockTable value="{!opplist}" var="opp">
+               <apex:column value="{!opp.id}"/>
+               <apex:column value="{!opp.name}"/>
+               <apex:column value="{!opp.accountid}"/>
+               <apex:column value="{!opp.amount}"/>
+               
+            </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+  
+    
+</apex:page>

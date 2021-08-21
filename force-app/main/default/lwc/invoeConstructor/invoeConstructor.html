@@ -1,0 +1,69 @@
+<template>
+    
+<!--  using for each loop dispalying the data
+    <template if:true={contacts}>
+        <template for:each={contacts} for:item="con">
+            
+            <p key={con.Id}>{con.FirstName}</p>
+        </template>
+        <template if:true={error}>
+            <c-error-panel errors={error}></c-error-panel>
+        </template>
+    </template>-->
+
+    <!-- calling apex method imparitively and displaying data
+    <template if:true={contacts}>
+        <lightning-card title="Calling Apex Method Imparitively in Constructor">
+    <div style="height: 300px;color:brown;">
+         <h1 style="background-color:white;text-align:center;size:20px;color:black;margin-top:5%;margin-bottom:5%;">Calling Apex Method Imparitively</h1> 
+        <lightning-datatable
+                key-field="id"
+                data={contacts}
+                columns={columns}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div> 
+    </lightning-card>
+    </template> -->
+
+   <!--  wiring data to a property and display data
+    <template if:true={contacts.data}>
+        <lightning-card title="Calling Apex Method using wire property">
+    <div style="height: 300px;color:brown;">
+         <h1 style="background-color:white;text-align:center;size:20px;color:black;margin-top:5%;margin-bottom:5%;">Calling Apex Method Imparitively</h1> 
+        <lightning-datatable
+                key-field="id"
+                data={contacts.data}
+                columns={columns}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div> 
+    </lightning-card>
+    </template> -->
+ 
+
+    <template if:true={contacts}>
+        <lightning-card title="Calling Apex Method using wire function">
+    <div style="height: 300px;color:brown;">
+         <!-- <h1 style="background-color:white;text-align:center;size:20px;color:black;margin-top:5%;margin-bottom:5%;">Calling Apex Method Imparitively</h1>  -->
+        <lightning-datatable
+                key-field="id"
+                data={contacts}
+                columns={columns}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                hide-checkbox-column>
+        </lightning-datatable>
+    </div> 
+    </lightning-card>
+    </template> 
+
+
+
+
+
+</template>

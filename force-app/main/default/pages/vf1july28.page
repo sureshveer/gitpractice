@@ -1,0 +1,11 @@
+<apex:page controller="july28" sidebar="false" showHeader="false">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:outputField value="{!asst.name}" label="name"/><br/>
+                <apex:outputField value="{!asst.purchasedate}" label="purchasedate"/><br/>
+                <apex:outputField value="{!asst.status}" label="status"/><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

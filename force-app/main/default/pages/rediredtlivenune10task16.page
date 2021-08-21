@@ -1,0 +1,14 @@
+<apex:page controller="apexlivecodingjune10task18">
+      <apex:form >
+        <apex:pageBlock >
+         
+    <apex:pageBlockTable value="{!accts}" var="a">
+        <apex:column value="{!a.name}"/>
+        <apex:column value="{!a.rating}"/>
+        <apex:column value="{!a.industry}"/>
+        
+    
+    </apex:pageBlockTable>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

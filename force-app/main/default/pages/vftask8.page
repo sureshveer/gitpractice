@@ -1,0 +1,14 @@
+<apex:page controller="task8helperclass" sidebar="false" showHeader="false">
+     <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task2">
+                <apex:inputText value="{!firststring}" label="enter first string:"/><br/>
+                <apex:inputText value="{!secondstring}" label="enter second string:"/><br/>
+                <apex:commandButton action="{!task8}" value="concat"/><br/>
+                
+                <apex:outputText value="{!concatstring}" label="After concating two strings:"></apex:outputText><br/>
+                    </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

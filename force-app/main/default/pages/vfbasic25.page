@@ -1,0 +1,14 @@
+<apex:page controller="apexvfbasic25">
+    <apex:form >
+    <apex:pageBlock title="vf basic task 25">
+        <apex:pageBlockSection title="fetching all users whose profile is system admin">
+             <apex:pageBlockTable value="{!userlist}" var="users">
+                <apex:column value="{!users.id}"/>
+                 <apex:column value="{!users.name}"/>
+                
+            </apex:pageBlockTable>
+            
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

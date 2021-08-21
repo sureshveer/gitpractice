@@ -1,0 +1,24 @@
+<apex:page controller="apexlctask23">
+     <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+             <apex:commandButton action="{!addcontact}" value="add"/>
+            <apex:commandButton action="{!savecontact}" value="save"/>
+            
+           
+            <apex:pageBlockSection columns="1" title="Insert contact">
+                
+                 <apex:pageBlockTable value="{!con}" var="c2">
+                     <apex:column headerValue="Lastname">
+                    <apex:inputField value="{!c2.lastname}" required="true"/>
+                     </apex:column>
+                     <apex:column headerValue="Type">
+                         <apex:inputField value="{!c2.Type__c}"/>
+                     </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+               
+         </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

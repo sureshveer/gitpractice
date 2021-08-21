@@ -1,0 +1,16 @@
+<apex:page controller="livecodingtask32helper">
+    
+    <apex:form >    
+        <apex:pageBlock title="Live coding Visual Force Task32">
+            <apex:pageBlockSection title="Contact Details">
+                <apex:inputtext value="{!lastname}" label="lastname:"/>
+                <apex:inputtext value="{!email}" label="email:"/>
+                
+                <apex:commandButton action="{!savecon}" value="save contact"/>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page controller="apexlctask18">
+      <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection columns="1">
+                <apex:inputfield value="{!prod.name}" label="Product Name:">
+                <apex:actionSupport event="onchange" reRender="Assetid" action="{!showassets}"/>
+                </apex:inputfield>
+                 <apex:inputfield value="{!ass.status}" label="Asset Status:">
+                <apex:actionSupport event="onchange" reRender="Assetid" action="{!showassets}"/>
+                </apex:inputfield>
+                <apex:commandButton action="{!showassets}" value="show assets"/>
+                 <apex:pageBlockTable value="{!assetlist}" var="a" rendered="{!tableview}" id="Assetid">
+                   
+                    <apex:column value="{!a.name}"/>
+                     <apex:column value="{!a.status}"/>
+                      <apex:column >
+                        <apex:commandlink value="show Details" action="{!showDetails}">
+                        <apex:param name="{!a.id}" value="{!a.id}" assignTo="{!x}"/>
+                        </apex:commandlink>
+                    </apex:column>
+             
+                
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

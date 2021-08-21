@@ -1,0 +1,38 @@
+<apex:page controller="task23helperclass" action="{!rows}">
+       <apex:form >
+           <apex:pageBlock >
+           <apex:pageBlockTable value="{!actlist}" var="aw" >
+               <apex:column > 
+                   <apex:inputCheckbox value="{!aw.isselected}" />
+               </apex:column> 
+               <apex:column > 
+				<apex:facet name="header">Account Name</apex:facet> 
+				<apex:inputText value="{!aw.act.name}"/> 
+                </apex:column>
+               <apex:column > 
+				<apex:facet name="header">Account Annual Revenue</apex:facet> 
+				<apex:inputText value="{!aw.act.AnnualRevenue}"/> 
+                </apex:column>
+                    
+               </apex:pageBlockTable> 
+               <apex:commandButton action="{!addrows }" value="Add Row" /> 
+               		 <apex:commandButton action="{!deleterows }" value="delete rows" /> 
+           </apex:pageBlock>
+          <!--   <br/>
+            <apex:commandButton action="{!save }" value="Save Accounts" /> <br/>
+        <apex:pageBlock >
+           <apex:pageBlockTable value="{!actlist}" var="account" >
+                <apex:column > 
+				<apex:facet name="header">Account Name</apex:facet> 
+				<apex:outputText value="{!account.name}"/> 
+                </apex:column>
+               <apex:column > 
+				<apex:facet name="header">Account Annual Revenue</apex:facet> 
+				<apex:outputText value="{!account.AnnualRevenue}"/> 
+                </apex:column>
+                
+               </apex:pageBlockTable> 
+           </apex:pageBlock>     
+   -->
+    </apex:form>
+</apex:page>

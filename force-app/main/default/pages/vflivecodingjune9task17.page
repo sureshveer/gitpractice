@@ -1,0 +1,40 @@
+<apex:page controller="apexlivecodingjune9task17">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection title=" live coding task17">
+            
+            <apex:selectList value="{!selectedindustry}" label="industry:" size="1">
+              <apex:selectOptions value="{!acctindustrylist}"></apex:selectOptions>
+            </apex:selectList>
+            
+        <br/>
+            
+            <apex:selectList value="{!selectedaccsource}" label="Account source:" size="1">
+              <apex:selectOptions value="{!Acctsourcelist}"></apex:selectOptions>
+            </apex:selectList>
+            
+            <br/>
+            <apex:commandButton action="{!result}" value="show result" />
+            <br/>
+        
+           
+
+
+ <apex:pageBlockTable value="{!bothacclist}" var="acc">
+                <apex:column value="{!acc.name}"/>
+                <apex:column value="{!acc.accountsource}" rendered="{!selectedaccsource!=null}"/>
+                  <apex:column value="{!acc.billingcity}" rendered="{!selectedaccsource!=null}"/>
+               <apex:column value="{!acc.accountnumber}"/>
+               <apex:column value="{!acc.annualrevenue}" rendered="{!selectedaccsource!=null}">
+                   <apex:facet name="header" >AnnualRevenue</apex:facet></apex:column>
+                  <apex:column value="{!acc.industry}"/>
+                  <apex:column value="{!acc.phone}"/>
+              
+               <apex:column value="{!acc.rating}"/>
+            </apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page standardController="Lead" >
+     <apex:form >
+    <apex:pageBlock title="vf task 21">
+        <apex:pageBlockSection title="Lead  details">
+            <apex:outputText value="{!Lead.name}"> </apex:outputText><br/>
+            <apex:outputText value="{!Lead.phone}"> </apex:outputText><br/>
+            <apex:outputText value="{!Lead.rating}"> </apex:outputText><br/>
+            
+            
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

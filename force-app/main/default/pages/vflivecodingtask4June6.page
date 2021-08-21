@@ -1,0 +1,31 @@
+<apex:page controller="apexlivecodingtask4june26">
+    
+    <apex:form >    
+        <apex:pageBlock title="Live coding Visual Force Task4">
+            <apex:pageMessages id="msgid" escape="true"></apex:pageMessages><br/>
+            <apex:pageBlockSection title="Opportunity Details">
+                 
+                <apex:inputText value="{!accname}" label="Account name:"/>
+                
+                <br/>
+                <apex:commandButton action="{!Searchopp}" value="Search opportunities"/>
+                <apex:commandButton action="{!deleteopp}"  value="delete opp" rendered="{!opplistvalue}" reRender="opplistid"/>
+                
+                <apex:pageBlockTable value="{!acctwrapperlist}" var="acctwrap" rendered="{!opplistvalue}" id="opplistid">
+                    
+                    <apex:column > 
+                        <apex:inputCheckbox value="{!acctwrap.selected}" />
+                    </apex:column> 
+                    <apex:column value="{!acctwrap.serialnumber}" headerValue="serialnumber"/>
+                    
+                    <apex:column value="{!acctwrap.o.id}"/>
+                    <apex:column value="{!acctwrap.o.name}"/>
+                 
+                    
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

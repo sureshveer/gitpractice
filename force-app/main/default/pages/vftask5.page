@@ -1,0 +1,33 @@
+<apex:page controller="task5helperclass">
+    
+     <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task5">
+                 <apex:inputText value="{!AccountName}" label="Account Name:" /><br/>
+                 <apex:inputText value="{!AccountAnnualRevenue}" label="Annual Revenue:"/><br/>
+                     <apex:selectList value="{!AccountSource}" label="Account source:" size="1" >
+                    
+                    <apex:selectOption itemValue="--Not Selected--" itemLabel="--Not Selected--"/>
+                    <apex:selectOption itemValue="web" itemLabel="web"/>
+                    <apex:selectOption itemValue="Phone Inquiry" itemLabel="Phone Inquiry"/>
+                    <apex:selectOption itemValue="Partner Referral" itemLabel="Partner Referral"/>
+                    <apex:selectOption itemValue="Purchased List" itemLabel="Purchased List"/>
+                    <apex:selectOption itemValue="Other" itemLabel="Other"/>
+                </apex:selectList>
+                <br/>
+                
+                <apex:commandButton action="{!task5}" value="fetch records" /><br/>
+                
+                 <apex:pageBlockTable value="{!acct}" var="a">
+                    <apex:column value="{!a.id}"/>
+                     <apex:column value="{!a.name}"/>
+                    <apex:column value="{!a.AnnualRevenue}"/>
+                    <apex:column value="{!a.AccountNumber}"/>
+                    <apex:column value="{!a.Industry}"/>
+                    <apex:column value="{!a.Description}"/>
+                      <apex:column value="{!a.AccountSource}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

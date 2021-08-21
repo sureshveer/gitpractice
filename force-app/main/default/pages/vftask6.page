@@ -1,0 +1,28 @@
+<apex:page controller="task6helperclass" sidebar="false" showHeader="false">
+    
+    <apex:form >
+    <apex:pageBlock title="visual force tasks">
+        <apex:pageBlockSection title="task6">
+            <apex:selectList value="{!country}" label="Enter country" size="1">
+                <apex:selectOptions value="{!countries}"/>
+                 <apex:actionSupport event="onchange" reRender="stateid"/>
+            </apex:selectList>
+              
+            <br/>
+            
+            <apex:selectList value="{!state}" id="stateid" label="Enter State" size="1">
+                <apex:selectOptions value="{!states}"/> 
+                 <apex:actionSupport event="onchange" reRender="cityid"/>
+            </apex:selectList>
+            
+             <br/>
+            
+            <apex:selectList value="{!city}" id="cityid" label="Enter City" size="1">
+                <apex:selectOptions value="{!cities}"/> 
+            </apex:selectList>
+
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

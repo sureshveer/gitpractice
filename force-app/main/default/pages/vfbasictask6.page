@@ -1,0 +1,14 @@
+<apex:page standardController="Account" sidebar="false" showHeader="false">
+    
+     <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="basictask6">
+                <apex:outputText value="{!account.name}"></apex:outputText><br/>
+                <apex:outputText value="{!account.industry}"></apex:outputText><br/>
+                <apex:outputText value="{!account.phone}"></apex:outputText><br/>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+         
+    </apex:form>
+    
+</apex:page>

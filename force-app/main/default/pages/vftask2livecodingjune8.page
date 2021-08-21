@@ -1,0 +1,23 @@
+<apex:page controller="apextask15livecodingjune8" sidebar="false" showHeader="false">
+    
+    <apex:form >
+    <apex:pageBlock >
+     <apex:pageBlockSection title="Live coding June 8  task1">
+         <apex:inputText value="{!accname}" label="Account Name:"/><br/>
+         <apex:commandButton action="{!show}" value="show" /><br/>
+         <apex:commandButton value="edit" reRender="editrows"/><br/>
+         <apex:commandButton action="{!save}" value="save"/>
+         <br/>
+         <apex:pageBlockTable value="{!acclist}" var="acc">
+             <apex:column value="{!acc.id}"/>
+             <apex:column value="{!acc.name}"/>
+             <apex:column value="{!acc.rating}"/>
+             <apex:column value="{!acc.industry}"/>
+                   
+             <apex:inlineEditSupport id="editrows" />         
+         
+         </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

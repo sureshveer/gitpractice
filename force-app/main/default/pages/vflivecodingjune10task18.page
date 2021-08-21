@@ -1,0 +1,25 @@
+<apex:page standardController="Account" extensions="apexlivecodingjune10task18">
+     <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection title=" live coding task18">
+            <apex:inputText value="{!name}" label="name:"/><br/>
+            <apex:inputText value="{!phone}" label="phone:"/><br/>
+                  
+            <apex:selectList value="{!selectedrating}" label="rating:" size="1">
+                      <apex:selectOptions value="{!ratinglist}"/>
+                 </apex:selectList>
+            <br/>
+                       <apex:selectList value="{!selectedownership}" label="ownership:" size="1">
+                      <apex:selectOptions value="{!ownershiplist}"/>
+                 </apex:selectList>
+            <br/>
+                 
+                  <apex:selectList value="{!selectedtype}" label="type:" size="1">
+                      <apex:selectOptions value="{!typelist}"/>
+                 </apex:selectList>
+                          
+            <apex:commandButton action="{!insertacc}" value="insert acc"/>
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

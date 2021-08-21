@@ -1,0 +1,11 @@
+<apex:page standardController="Case">
+   <apex:form >
+    <apex:pageBlock title="Basic task8">
+        <apex:pageBlockSection title="Cases details">
+            <apex:outputText value="{!Case.Subject}"> </apex:outputText><br/>
+            <apex:outputText value="{!Case.origin}"> </apex:outputText><br/>
+            <apex:outputText value="{!Case.Priority}"> </apex:outputText><br/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

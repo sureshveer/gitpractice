@@ -1,0 +1,43 @@
+<apex:page controller="task24helperclass" sidebar="false" showHeader="false">
+    
+    <apex:form >    
+        <apex:pageBlock title="Visual Force Task24">
+            <apex:pageBlockSection title="static Account details">
+                <apex:pageBlockTable value="{!staticacclist}" var="a">
+               <apex:column value="{!a.phone}"/>
+               <apex:column value="{!a.name}"/>
+               <apex:column value="{!a.industry}"/>
+               <apex:column value="{!a.rating}"/>
+                
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+          <apex:pageBlockSection title="Dynamic account Details">
+
+              <apex:inputText value="{!accname}" label="account name:"/><br/>
+             <apex:inputText value="{!accphone}" label="phone:"/><br/>
+               <apex:selectList value="{!accindustry}" label="industry: "  size="1">
+                    <apex:selectOptions value="{!industry}"/>
+                
+                </apex:selectList>
+              <br/>
+               <apex:selectList value="{!accrating}" label="rating: "  size="1">
+                    <apex:selectOptions value="{!rating}"/>
+                
+                </apex:selectList>
+              <br/>
+             
+            <apex:commandButton action="{!getaccts}"  value="show accounts"/><br/>
+            
+               <apex:pageBlockTable value="{!dynamicacclist}" var="a">
+               
+               <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.phone}"/>
+               <apex:column value="{!a.industry}"/>
+               <apex:column value="{!a.rating}"/>
+                
+            </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

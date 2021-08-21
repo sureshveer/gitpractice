@@ -1,0 +1,16 @@
+<apex:page controller="redirectapextask10livecodingjune10">
+    
+     <apex:form >
+        <apex:pageBlock >
+           
+            
+            <apex:pageBlockSection title="redirect LVCtask20" id="conid">
+               
+                <apex:outputText value="{!caserecord.id}"></apex:outputText><br/>
+                 <apex:outputText value="{!caserecord.subject}"></apex:outputText><br/>
+                 <apex:outputText value="{!caserecord.status}"></apex:outputText><br/>
+                 <apex:outputText value="{!caserecord.type}"></apex:outputText><br/>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

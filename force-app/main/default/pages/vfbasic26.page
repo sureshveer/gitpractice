@@ -1,0 +1,16 @@
+<apex:page controller="apexvfbasic26">
+    
+    <apex:form >
+    <apex:pageBlock title="vf basic task 26">
+        <apex:pageBlockSection title="fetching recently viewed account records">
+             <apex:pageBlockTable value="{!acclist}" var="acc">
+                <apex:column value="{!acc.id}"/>
+                 <apex:column value="{!acc.name}"/>
+                <apex:column value="{!acc.LastViewedDate}"/>
+            </apex:pageBlockTable>
+            
+            
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

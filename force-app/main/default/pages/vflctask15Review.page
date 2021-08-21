@@ -1,0 +1,33 @@
+<apex:page controller="Task15June8demo">
+    <apex:form id="formId" >
+    	<apex:pageBlock title="Live Coding Task 15" >
+            <apex:pageMessages ></apex:pageMessages>
+        	<apex:pageBlockSection title="Enter Account Details" columns="2" >
+                <apex:inputText label="Enter Account Name" value="{!searchName}" />
+                	<apex:commandButton action="{!show}" value="show records" />
+            </apex:pageBlockSection>
+            <apex:outputPanel id="Task15">
+            	<apex:pageBlockTable value="{!sortedAccts}" var="acct" rendered="{!acclist}">
+                    <apex:column value="{!acct.Name}" />
+                    <apex:column value="{!acct.Type}" />
+                    <apex:column >
+                    	<apex:commandLink action="{!editRecord}" value="edit" >
+                        	<apex:param name="{!acct.id}" value="{!acct.Id}" assignTo="{!selectedAcctId}" />
+                        </apex:commandLink>    
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+           
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!editrecordobj}">
+        <apex:pageBlockSection >
+            <apex:inputText value="{!acc.name}"  label="Name:" /><br/>
+           <apex:selectList value="{!selectedType}" size="1" label="Type:">
+            <apex:selectOptions value="{!AccTypeList}"/>
+            </apex:selectList>	
+            <br/>
+             <apex:commandButton action="{!saveacc}" value="save record"/>
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

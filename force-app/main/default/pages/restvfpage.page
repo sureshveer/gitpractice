@@ -1,0 +1,33 @@
+<apex:page controller="restcallout">
+    
+     <apex:form >
+    <apex:pageBlock title="Apex web service">
+        <apex:pageBlockSection title="Account  details">
+             <apex:pageBlockTable value="{!accwraplist}" var="a1" rendered="{!tablelist}"  >
+                      <apex:column >
+                          <apex:inputCheckbox value="{!a1.selected}"> 
+                              <!--  <apex:actionSupport action="{!checkitem}" event="onchange" />-->
+                          </apex:inputCheckbox>
+                      </apex:column>
+                 
+                 
+                      <apex:column value="{!a1.serialNumber}"/>
+                      
+                   
+                       <apex:column value="{!a1.acc1.id}"/>
+                    <apex:column value="{!a1.acc1.name}"/>
+                     <apex:column value="{!a1.acc1.website}"/>
+                      <apex:column value="{!a1.acc1.rating}"/>
+                 
+                    
+               
+                </apex:pageBlockTable>
+            
+            <apex:commandButton action="{!saverecord}"  value="save to my org"  id="buttonid" />
+                   
+            
+        </apex:pageBlockSection>
+     </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="pdfcontrollertask32">
+     <apex:form >
+    <apex:pageBlock >
+        <apex:outputText >To view opportunity and its related account details -> </apex:outputText>
+        <apex:commandButton action="{!pdfbutton}" value="click here" />
+    </apex:pageBlock>
+  </apex:form>
+    
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page controller="apexvfopen" action="{!vfcount}">
+    <apex:form >
+     
+        <h1>vf page loading count is {!acc.vfcount__c}</h1>
+    </apex:form>
+    
+</apex:page>

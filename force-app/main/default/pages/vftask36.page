@@ -1,0 +1,32 @@
+<apex:page controller="apexhelpertask36">
+     <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task36 details">
+                <apex:selectList value="{!selectedoppstage}" size="1" label="stagename:">
+                    <apex:selectOptions value="{!oppstagelist}"/>
+                    
+                </apex:selectList>
+                <br/>
+                <apex:commandButton action="{!searchopp}" value="search opp"/>
+                <apex:commandButton action="{!deleteopp}" value="delete opp"/>
+                <br/>
+                
+                 <apex:pageBlockTable value="{!wrapperlist}" var="oppwrap">
+                    
+                    <apex:column headerValue="selectbox" > 
+                        <apex:inputCheckbox value="{!oppwrap.isselected}"  />
+                    </apex:column> 
+                    
+                    <apex:column value="{!oppwrap.opp.id}"/>
+                    <apex:column value="{!oppwrap.opp.name}"/>
+                     <apex:column value="{!oppwrap.opp.amount}"/>
+                     <apex:column value="{!oppwrap.opp.stagename}"/>
+                 
+                    
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

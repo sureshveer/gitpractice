@@ -1,0 +1,24 @@
+<apex:page controller="AddContactsAccounts1" sidebar="false" >
+    <apex:form id="form">
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!addNewAccount}" value="Add New Account" rerender="pageId"/>
+                <apex:commandButton action="{!addNewContact}" value="Add New Contact" rerender="pageId"/>
+                <apex:commandButton action="{!insertAccountsContacts}" value="Insert All" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockTable var="customAccount" value="{!mapIntVsAcc}" id="pageId">
+                <apex:column ><h1>
+                    Account Name
+                    </h1> <apex:inputfield value="{!mapIntVsAcc[customAccount].Name}" /></apex:column>
+                <apex:column > <apex:pageBlockTable value="{!mapIntVsConList[customAccount]}" var="cont" columns="6" >
+                    <apex:column ><h1>
+                        Contact Last Name
+                        </h1> <apex:inputfield value="{!cont.LastName}" /> </apex:column>
+                   
+                    </apex:pageBlockTable></apex:column>
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

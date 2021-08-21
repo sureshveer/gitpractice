@@ -1,0 +1,19 @@
+<apex:page controller="apexlivecodingjune9task16" sidebar="true" showHeader="true">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection title="Insert contact" >
+
+            <apex:inputText value="{!con.lastname}" label="name:"/><br/>
+            
+            <apex:inputText value="{!con.email}" label="email"/><br/>
+           
+            <apex:commandButton action="{!insertcontact}" value="insert contact"/>
+        </apex:pageBlockSection>    
+        
+    </apex:pageBlock>
+    
+    
+    
+    </apex:form>
+    
+</apex:page>

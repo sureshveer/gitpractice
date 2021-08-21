@@ -1,0 +1,139 @@
+<aura:component controller="sample1">
+	
+    <aura:attribute name="contactlist" type="List" />
+    <aura:attribute name="columns" type="List"/>
+   
+    <aura:attribute name="name" type="string"/>
+     <aura:attribute name="length" type="integer"/>
+     <aura:attribute name="conlist" type="List"/>
+     <aura:attribute name="conset" type="set"/>
+     <aura:attribute name="conarray" type="contact[]"/>
+     <aura:attribute name="con" type="Account"/>
+    
+    <lightning:input aura:id="test" label="enter name:"/>
+    
+     <div class="slds-p-around_medium">
+    <div class="slds-grid slds-wrap">
+    <aura:iteration items="{!v.contactlist}" var="con">
+        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+         <lightning:card footer="{!con.Email}" title="{!con.Name}" iconName="standard:contact" >
+            
+        <aura:set attribute="actions">
+            <lightning:button label="update" variant="brand"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+         <h1>{!con.Name}</h1>
+             <h1>{!con.Email}</h1>
+            
+        </p>
+       </lightning:card>
+        </div>
+    </aura:iteration>
+       </div></div>
+    
+    
+
+ <!--   <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    -->
+    
+<!-- -->
+   <!-- not working input field directly it only work with recirdeditform,recordviewform
+    <lightning:input aura:id="test" label="enter name:"/>
+     <lightning:inputField fieldName="Name" value="{!v.con.name}"/>
+     <lightning:inputField fieldName="Rating" value="{!v.con.Rating}"/>
+-->
+   <!-- listview is used t display accounts directly 
+    <lightning:listView aura:id="listViewAccounts"
+    objectApiName="Contact"
+    listName="AllContacts"
+    rows="5"
+    showSearchBar="true"
+    showActionBar="true"
+    enableInlineEdit="true"
+    showRowLevelActions="true"
+/>
+    -->
+    <!-- recordviewform is used to display particular account based on id
+    <lightning:recordViewForm  objectApiName="Account" recordId="0012w000008FDxTAAW">
+        <div class="slds-box">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Rating" />
+        </div>
+    </lightning:recordViewForm>
+    -->
+    
+    <!-- record edit form with Lightning input 
+
+    <lightning:recordEditForm objectApiName="Contact">
+    <lightning:messages />
+    <lightning:inputField fieldName="Name" />
+   
+    <lightning:button class="slds-m-top_small" variant="brand" type="submit" label="Create contact" />
+</lightning:recordEditForm>
+   
+    <lightning:recordEditForm objectApiName="Case" onsuccess="{!c.handleSuccess}">
+    <lightning:inputField fieldName="Name"/>
+    <lightning:inputField fieldName="AccountId" onchange="{!c.handleChange}"/>
+    <lightning:inputField fieldName="Description" />
+    <div class="slds-m-top_medium">
+        <lightning:button label="Create Case" type="submit"/>
+    </div>	
+</lightning:recordEditForm>
+    
+    
+    <lightning:recordEditForm objectApiName="Account" recordId="0012w000008FDxTAAW">
+    <lightning:inputField fieldName="Name" readonly="true"/>
+    <lightning:inputField fieldName="Rating"/>
+    <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update" />
+</lightning:recordEditForm>
+    -->
+    <lightning:button value="search" onclick="{!c.dosearch}" variant="success" label="search"/>
+    <!-- variant may be Base,Neutral,brand,Brand Outline,Destructive,Destructive Text,Success -->
+    <!-- class="slds-m-left_x-small"-->
+    
+    
+  
+    <!--  
+    
+     <h1>Using Iteration tag</h1>
+    <aura:iteration items="{!v.contactlist}" var="con">
+      name is:{!con.Name}
+       Email is:  {!con.Email}<br/>
+        
+    </aura:iteration>
+    
+    <h1>Using HtmlTags</h1>
+    
+    
+     <lightning:card title="Displaying contacts">
+    <aura:set attribute="body">
+      <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+          <tr class="slds-text-title_caps">
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <aura:iteration items="{!v.contactlist}" var="con">
+            <tr scope="row">
+               
+              <td> {!con.Name}</td>
+              <td> {!con.Email}</td>
+            </tr>
+          </aura:iteration>
+        </tbody>
+      </table>
+    </aura:set>
+  </lightning:card>
+    
+     <h1>Using Datatable</h1>
+     <lightning:datatable
+                keyField="id"
+                data="{! v.contactlist }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="false"/>
+   
+    -->
+    
+</aura:component>

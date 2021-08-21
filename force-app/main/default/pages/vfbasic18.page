@@ -1,0 +1,13 @@
+<apex:page controller="apexvfbasic18" >
+     <apex:form >
+    <apex:pageBlock title="Basic task18">
+        <apex:pageBlockSection title="Opportunities Details">
+            <apex:pageBlockTable value="{!opplist}" var="opp">
+                <apex:column value="{!opp.Amount}"/> <br/>
+                <apex:column value="{!opp.CloseDate}"/><br/>
+</apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

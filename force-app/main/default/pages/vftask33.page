@@ -1,0 +1,19 @@
+<apex:page controller="task33helperclass">
+     <apex:form >
+    <apex:pageBlock mode="edit">
+        <apex:pageBlockSection title=" vf task33">
+            <apex:inputText value="{!casenumber}" />
+            <apex:commandButton action="{!viewcases}" value="view cases"/>
+           
+            <apex:pageBlockTable value="{!caselist}" var="c" border="2">
+         <apex:column value="{!c.id}"/>
+           <apex:column value="{!c.subject}"/>
+           <apex:column value="{!c.status}"/>
+           <apex:column value="{!c.casenumber}"/>
+           
+        </apex:pageBlockTable> 
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page controller="apexlcodingtask24">
+        <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection columns="1" title="Leads" >
+                 <apex:inputText value="{!lname}" label="Lead Name"/>
+                 <apex:inputField value="{!l.status}">
+                     <apex:actionSupport event="onchange"  action="{!showleads1}" reRender="tableid"/>
+                </apex:inputField>
+             <apex:commandButton action="{!showleads}" value="save record"/>
+                
+                    <apex:pageBlockTable value="{!leadlist}" var="l2" rendered="{!leadtable}" id="tableid">
+                        <apex:column value="{!l2.name}"/>
+                    <apex:column value="{!l2.status}"/>
+                </apex:pageBlockTable>
+            
+            </apex:pageBlockSection>
+               
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

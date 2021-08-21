@@ -1,0 +1,37 @@
+<apex:page controller="apexlvctask28">
+    <script>
+    function accountrecords(){
+       
+        acctrecords();
+    }
+    </script>
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="List of accounts" id="secid">
+                <apex:pageMessages ></apex:pageMessages>
+                <apex:actionFunction action="{!accountrecords}" name="acctrecords" reRender="secid"/>
+                <apex:selectList value="{!selectedrating}" size="1" label="Account Rating:" onchange="accountrecords()">
+                    <apex:selectOptions value="{!ratinglist}"/>
+                    
+                   
+                </apex:selectList>
+                <br/>
+                <apex:selectList value="{!selectedindustry}" size="1" label="Account Industry:" onchange="accountrecords()">
+                    <apex:selectOptions value="{!industrylist}"/>
+                   
+                </apex:selectList>
+                
+                <br/>
+                
+                <apex:pageBlockTable value="{!actlist}" var="act" id="actid" rendered="{!viewact}" >
+                    <apex:column value="{!act.name}"/>
+                     <apex:column value="{!act.industry}"/>
+                     <apex:column value="{!act.rating}"/>
+                
+                </apex:pageBlockTable>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

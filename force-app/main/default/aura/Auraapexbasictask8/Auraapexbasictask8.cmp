@@ -1,0 +1,19 @@
+<aura:component >
+	
+     <aura:attribute name="result" type="String"/>
+    
+    <div class="slds-p-around_medium">
+    <div class="slds-align_absolute-center">
+         <lightning:card footer="Even Or Odd" title="Checking Number is even  or odd" iconName="custom:custom1">
+            
+        <aura:set attribute="actions">
+             <lightning:input aura:id="input1" label="enter any number:"/>
+             <lightning:button label="Result" variant="brand" onclick="{!c.evenorodd}"/>
+        </aura:set>
+        <p class="slds-p-horizontal_small">
+            <h1 class="c1">Result is: {!v.result}</h1>
+            
+        </p>
+       </lightning:card>
+        </div></div>
+</aura:component>

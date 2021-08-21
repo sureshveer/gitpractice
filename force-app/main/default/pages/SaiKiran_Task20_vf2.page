@@ -1,0 +1,32 @@
+<apex:page Controller="SaiKiran_Task20_Class1" sidebar="false" action="{!showcondetails}">
+    <apex:form >
+        
+        <apex:pageBlock >
+            <apex:commandButton action="{!Editrecord}" value="edit" rendered="{!editbutton}"/>
+                <apex:commandButton action="{!deleterecord}" value="delete" />
+            <apex:commandButton action="{!updaterecord}" value="update" rendered="{!updatebutton}"/>
+                  <apex:commandButton action="{!previouspage}" value="HomePage" />
+        </apex:pageBlock>
+        
+        
+        <apex:pageBlock rendered="{!edit1section}">
+            <apex:pageBlockSection title="Contact Details are">
+                
+                <apex:outputText value="{!c.Account.Name}" label="Account Name:"/><br/>
+                <apex:outputText value="{!c.lastname}" label="lastname:"/><br/>
+                <apex:outputText value="{!c.phone}" label="phone:"/><br/>
+               
+                    </apex:pageBlockSection>
+            </apex:pageBlock>
+        
+        <apex:pageBlock rendered="{!editsection}">
+            <apex:pageBlockSection title="Update Contact Details">
+            <apex:inputText value="{!c.account.name}" label="Account Name:"/><br/>
+            <apex:inputText value="{!c.lastname}" label="lastname:"/><br/>
+            <apex:inputText value="{!c.phone}" label="phone:"/><br/>
+           
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

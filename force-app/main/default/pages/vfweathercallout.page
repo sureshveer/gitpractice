@@ -1,0 +1,20 @@
+<apex:page controller="restweatherclass">
+      <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="task37 details">
+                <apex:inputText value="{!city}" label="city:"/>
+                <apex:commandButton action="{!showweather}" value="show weather"/><br/>
+                
+                <apex:outputText label="city:" value="{!city}"/>
+                <apex:outputText label="Tempearture:" value="{!temp}" />
+                <apex:outputText label="Pressure:" value="{!pressure}"/>
+                <apex:outputText label="Humidity:" value="{!humidity}"/>
+                <apex:outputText label="Tempearture minimum:" value="{!temp_min}"/>
+                <apex:outputText label="Tempearture maximum:" value="{!temp_max}"/>
+                
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

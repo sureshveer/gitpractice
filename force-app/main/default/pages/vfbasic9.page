@@ -1,0 +1,12 @@
+<apex:page standardController="Opportunity">
+   <apex:form >
+    <apex:pageBlock title="Basic task9">
+        <apex:pageBlockSection title="opportunity  details">
+            <apex:outputText value="{!Opportunity.name}"> </apex:outputText><br/>
+            <apex:outputText value="{!Opportunity.amount}"> </apex:outputText><br/>
+            <apex:outputText value="{!Opportunity.stagename}"> </apex:outputText><br/>
+            <apex:outputText value="{!Opportunity.closedate}"> </apex:outputText><br/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

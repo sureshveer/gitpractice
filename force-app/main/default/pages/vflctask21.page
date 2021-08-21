@@ -1,0 +1,33 @@
+<apex:page controller="apexlctask21">
+     <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection columns="1">
+                <apex:inputtext value="{!CNumber}" label="Case Number:"/>
+                 
+                     <apex:selectList value="{!selectedstatus}" label="enter status"  size="1">
+                          <apex:selectOptions value="{!casestatuslist}"/>
+                          <apex:actionSupport event="onchange" reRender="caseid" action="{!showcases1}"/>
+                   
+                </apex:selectList>
+                         
+               
+               
+                <apex:commandButton action="{!showcases}" value="show cases"  />
+                 <apex:pageBlockTable value="{!caselist}" var="c" rendered="{!tablelist}" id="caseid">
+                    <apex:column value="{!c.CaseNumber}"/>
+                     <apex:column value="{!c.status}"/>
+                     <apex:column value="{!c.ParentId}"/>
+                 
+                     <apex:inlineEditSupport showOnEdit="savecase" />
+               
+                </apex:pageBlockTable>
+              
+             
+                 
+                
+                 <apex:commandButton action="{!savecase}" value="save cases" rendered="{!savebutton}"/>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

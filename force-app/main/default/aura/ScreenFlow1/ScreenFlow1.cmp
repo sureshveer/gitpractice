@@ -1,0 +1,322 @@
+<aura:component controller="apexscreenflow" implements="forceCommunity:availableForAllPageTypes" access="global"
+>
+    
+    <aura:attribute type="Contact" name="conobj" />
+    <aura:attribute type="Opportunity" name="oppobj" />
+    <aura:attribute name="view1" type="boolean" Default="False"/>
+    <aura:attribute name="view2" type="boolean" Default="False"/>
+    <aura:attribute name="view3" type="boolean" Default="False"/>
+    <aura:attribute name="view4" type="boolean" Default="False"/>
+    <aura:attribute name="view5" type="boolean" Default="False"/>
+    
+     <aura:attribute name="card1" type="boolean" Default="False"/>
+     <aura:attribute name="card2" type="boolean" Default="False"/>
+     <aura:attribute name="card3" type="boolean" Default="False"/>
+     <aura:attribute name="card4" type="boolean" Default="False"/>
+    
+    <aura:attribute type="decimal" name="setint" />
+     <aura:attribute type="decimal" name="countitr" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <br /><br /><br /><br /><br /><br /><br />
+    <div class="slds-align_absolute-center">
+        
+        <aura:if isTrue="{!v.card1}">
+        <div style='align:center;width:100%;Height:100%;'>
+            <Lightning:card title="WORK OF HR DEPARTMENT" footer="{!'Time:'+ v.setint}" iconName="standard:account">
+                <aura:if isTrue="{!v.view1}">
+                    
+                    <h1 style='color:black;font-size:18px;text-align:center'>Daily Attendence</h1> 
+                    <br />
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer "  style='color:green;width:100%'>
+                        <thead>
+                            <tr class="slds-text-title_caps" >
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="id">id</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="lastname">LastName</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Email">Email</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="phone">phone</div>
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody > 
+                            
+                            <tr >
+                                <td > 
+                                    <div style="width:50px">
+                                        {!v.conobj.Id}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="width:50px">
+                                        {!v.conobj.LastName}
+                                    </div>   
+                                </td>
+                                <td>
+                                    <div  style="width:50px" >
+                                        {!v.conobj.Email}
+                                    </div>   
+                                </td>
+                                <td>
+                                    <div  style="width:100px">
+                                        {!v.conobj.Phone}
+                                    </div>   
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </aura:if>
+                <aura:if isTrue="{!v.view2}">
+                    
+                    <h1 style='color:black;font-size:18px;text-align:center'>Daily Cleaning Check Sheet</h1>
+                    <br />
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer "  style='color:green;width:100%;align:center'>
+                        <thead>
+                            <tr class="slds-text-title_caps" >
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="id">id</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="amount">amount</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="stagename">stagename</div>
+                                </th>
+                                
+                                
+                            </tr>
+                        </thead>
+                        <tbody > 
+                            
+                            <tr >
+                                <td > 
+                                    <div style="width:50px">
+                                        {!v.oppobj.Id}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="width:50px">
+                                        {!v.oppobj.amount}
+                                    </div>   
+                                </td>
+                                <td>
+                                    <div  style="width:50px" >
+                                        {!v.oppobj.StageName}
+                                    </div>   
+                                </td>
+                                
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.view3}">
+                    <h1 style='color:black;font-size:18px;text-align:center'> 5S Work</h1>
+                    <br />
+                    <img src="{!$Resource.image11}" alt="image11" class="center"/>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.view4}">
+                    <h1 style='color:black;font-size:18px;text-align:center'> Vehicle Status</h1>
+                    <br />
+                    <img src="{!$Resource.image12}" alt="image12" class="center"/>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.view5}">
+                    <h1 style='color:black;font-size:18px;text-align:center'> Daily Shift Notice</h1>
+                    <br />
+                    <img src="{!$Resource.image13}" alt="image13" class="center"/>
+                    
+                </aura:if>
+                
+                
+                
+            </Lightning:card></div>
+        </aura:if>
+        
+         <aura:if isTrue="{!v.card2}">
+     <div style='align:center;width:80%;Height:100%;'>
+            <Lightning:card title="WORK OF PURCHASE DEPARTMENT" footer="{!'Time:'+ v.setint}" iconName="standard:account">
+                <aura:if isTrue="{!v.view1}">
+                    
+                    <h1 style='color:black;font-size:18px;text-align:center'>Daily Material Consuption</h1> 
+                    <br />
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer "  style='color:green;width:100%'>
+                        <thead>
+                            <tr class="slds-text-title_caps" >
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="id">id</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="lastname">LastName</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Email">Email</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="phone">phone</div>
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody > 
+                            
+                            <tr >
+                                <td > 
+                                    <div style="width:50px">
+                                        {!v.conobj.Id}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="width:50px">
+                                        {!v.conobj.LastName}
+                                    </div>   
+                                </td>
+                                <td>
+                                    <div  style="width:50px" >
+                                        {!v.conobj.Email}
+                                    </div>   
+                                </td>
+                                <td>
+                                    <div  style="width:100px">
+                                        {!v.conobj.Phone}
+                                    </div>   
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </aura:if>
+                <aura:if isTrue="{!v.view2}">
+                    
+                    <h1 style='color:black;font-size:18px;text-align:center'>Daily Balance Quantity</h1>
+                    <br />
+                    <img src="{!$Resource.image12}" alt="image12" class="center"/>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.view3}">
+                    <h1 style='color:black;font-size:18px;text-align:center'> Support Required For Management</h1>
+                    <br />
+                    <img src="{!$Resource.image11}" alt="image11" class="center"/>
+                    
+                </aura:if>
+              
+                
+                
+                
+            </Lightning:card></div>
+        </aura:if>
+        
+           <aura:if isTrue="{!v.card3}">
+     <div style='align:center;width:80%;Height:100%;'>
+            <Lightning:card title="WORK OF SALES DEPARTMENT" footer="{!'Time:'+ v.setint}" iconName="standard:account">
+                <aura:if isTrue="{!v.view1}">
+                    
+                    <h1 style='color:black;font-size:18px;text-align:center'>Daily Turn Overs</h1> 
+                    <br />
+                    <img src="{!$Resource.image12}" alt="image12" class="center"/>
+                 
+                </aura:if>
+                <aura:if isTrue="{!v.view2}">
+                    
+                    <h1 style='color:black;font-size:18px;text-align:center'>Today Dispatch Plan</h1>
+                    <br />
+                   
+                       <table class="slds-table slds-table_bordered slds-table_cell-buffer "  style='color:green;width:100%'>
+                        <thead>
+                            <tr class="slds-text-title_caps" >
+                                <th scope="col" >
+                                    <div class="slds-truncate" title="id">id</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="lastname">LastName</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Email">Email</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="phone">phone</div>
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody > 
+                            
+                            <tr >
+                                <td > 
+                                    <div style="width:50px">
+                                        {!v.conobj.Id}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="width:50px">
+                                        {!v.conobj.LastName}
+                                    </div>   
+                                </td>
+                                <td>
+                                    <div  style="width:50px" >
+                                        {!v.conobj.Email}
+                                    </div>   
+                                </td>
+                                <td>
+                                    <div  style="width:100px">
+                                        {!v.conobj.Phone}
+                                    </div>   
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </aura:if>
+                <aura:if isTrue="{!v.view3}">
+                    <h1 style='color:black;font-size:18px;text-align:center'> Tomorrow Dispatch Plan</h1>
+                    <br />
+                    <img src="{!$Resource.image11}" alt="image11" class="center"/>
+                    
+                </aura:if>
+              
+                
+                
+                
+            </Lightning:card></div>
+        </aura:if>
+        
+         <aura:if isTrue="{!v.card4}">
+     <div style='align:center;width:80%;Height:100%;'>
+            <Lightning:card title="WORK OF ACCOUNTS DEPARTMENT" footer="{!'Time:'+ v.setint}" iconName="standard:account">
+                <aura:if isTrue="{!v.view1}">
+                    
+                    <h1 style='color:black;font-size:18px;text-align:center'>Work Credits and Debtors Ledgers</h1>
+                    <br />
+                    <img src="{!$Resource.image12}" alt="image12" class="center"/>
+                 
+                </aura:if>
+               
+                <aura:if isTrue="{!v.view2}">
+                    <h1 style='color:black;font-size:18px;text-align:center'> Day Of Book Bills</h1>
+                    <br />
+                    <img src="{!$Resource.image11}" alt="image11" class="center"/>
+                    
+                </aura:if>
+             
+                
+                
+                
+            </Lightning:card></div>
+        </aura:if>
+    
+    </div>
+    
+    
+</aura:component>

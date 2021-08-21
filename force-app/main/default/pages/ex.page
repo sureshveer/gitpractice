@@ -1,0 +1,4 @@
+<apex:page >
+    
+     <c:editmode1 value="example"/>
+</apex:page>

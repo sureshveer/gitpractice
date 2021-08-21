@@ -1,0 +1,38 @@
+<apex:page controller="apextask10livecodingjune10">
+     <apex:form >
+    <apex:pageBlock >
+         <apex:pageMessages id="msgid" escape="true"></apex:pageMessages><br/>
+        <apex:pageBlockSection title=" live coding task19">
+            <apex:inputText value="{!accname}" label="acc name:"/><br/>
+            
+            <apex:selectList value="{!selectedstatus}" label="status:" size="1">
+                      <apex:selectOptions value="{!casestatuslist}"/>
+                      <apex:actionSupport event="onchange" reRender="caseid"/>
+                 </apex:selectList>
+            
+            <br/>
+            
+            <apex:commandButton action="{!showrecords}" value="show cases"/><br/>
+            
+            
+            
+            <apex:pageBlockTable value="{!caselist}" var="cases1" id="caseid">
+        <apex:column value="{!cases1.id}"/>
+        <apex:column value="{!cases1.status}"/>
+                 <apex:column value="{!cases1.type}"/>
+                <apex:column >
+                    <apex:commandLink action="{!show}" value="show details"> 
+                            <apex:param name="caseid" value="{!cases1.id}" assignTo="{!x}"/>
+                        </apex:commandLink>
+                    
+                </apex:column>
+       
+        
+    
+    </apex:pageBlockTable>
+            
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

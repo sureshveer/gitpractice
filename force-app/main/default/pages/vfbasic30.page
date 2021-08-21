@@ -1,0 +1,16 @@
+<apex:page standardController="Lead" extensions="apexvfbasic30">
+    
+    <apex:form >
+    <apex:pageBlock title="vf task 30">
+        <apex:pageBlockSection title="insert Lead">
+             <apex:inputText value="{!leadname}" label="Lead Name:"/><br/>
+             <apex:inputText value="{!leadcompany}" label="Lead Company:"/><br/>
+            <apex:inputText value="{!leadrevenue}" label="Lead Revenue:"/><br/>
+             <apex:inputText value="{!leadtitle}" label="Lead Title:"/><br/>
+             <apex:inputText value="{!leadrating}" label="Lead Rating:"/><br/>
+             
+            <apex:commandButton action="{!savelead}" value="save lead"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

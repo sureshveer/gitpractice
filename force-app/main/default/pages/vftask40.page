@@ -1,0 +1,65 @@
+<apex:page controller="apexhelpertask40" renderAs="{! renderingService }"  contentType="{! renderedContentType }" >
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="case details">
+                <apex:inputText value="{!casenumber}" label="CaseNumber:"/><br/>
+                <apex:commandButton action="{!showcases}" value="show cases"/><br/>
+                <apex:pageBlockTable value="{!caselist}" var="c" rendered="{!tablevisible}">
+                    <apex:column value="{!c.id}"/>
+                    <apex:column value="{!c.CaseNumber}"/>
+                    <apex:column value="{!c.status}"/>
+                    <apex:column value="{!c.subject}"/>
+                    <apex:column value="{!c.type}"/>
+                    
+                      <apex:column >
+                        <apex:commandLink value="edit record" action="{!editrecord}"> 
+                            <apex:param name="cid" value="{!c.id}" assignTo="{!x}"/>
+                        </apex:commandLink>
+                        
+                    </apex:column>
+                                
+                </apex:pageBlockTable>
+                
+                
+            
+            
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!block2visible}">
+            <apex:pageBlockSection >
+              
+                <apex:inputText value="{!c.casenumber}" label="casenumber:"/><br/>
+                 <apex:inputText value="{!c.status}" label="status:"/><br/>
+                 <apex:inputText value="{!c.subject}" label="subject:"/><br/>
+                <apex:inputText value="{!c.type}" label="Type:"/><br/>
+                <apex:commandButton action="{!saverecord}" value="update record"/>
+                 
+            </apex:pageBlockSection>
+       
+        </apex:pageBlock>
+        <apex:pageBlock rendered="{!block3visible}">
+            <apex:pageBlockSection >
+                <apex:commandButton action="{!renderaspdf}" value="save as pdf">
+                 <apex:param assignTo="{! renderedFileName }" value="Contact-List.pdf"/>
+                </apex:commandButton><br/>
+                
+                 <apex:outputText value="{!c.casenumber}" label="casenumber:"/><br/>
+                 <apex:outputText value="{!c.status}" label="status:"/><br/>
+                 <apex:outputText value="{!c.subject}" label="subject:"/><br/>
+                <apex:outputText value="{!c.type}" label="Type:"/><br/>
+                
+                <hr/>
+                
+                 <apex:outputText value=" {! renderedContentType }" label="Content type"/><br/>
+     <apex:outputText value=" {! renderingService }" label="Rendering service"/><br/>
+                
+                
+            </apex:pageBlockSection>
+        
+        </apex:pageBlock>
+        
+       
+      </apex:form>
+    
+</apex:page>

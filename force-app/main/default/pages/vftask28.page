@@ -1,0 +1,23 @@
+<apex:page controller="task28helperclass" sidebar="false" showHeader="false">
+    <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="task28">
+                <apex:inputText value="{!accname}"/>
+                <apex:selectList value="{!selectedact}" label="enter industry"  size="1">
+                    <apex:selectOption itemvalue="0052w000002rvs4AAA" itemLabel="suresh veeramalla"></apex:selectOption>
+                     <apex:selectOption itemvalue="0052w000002rvs4BBB" itemLabel="kumar veeramalla"></apex:selectOption>
+                     <apex:selectOption itemvalue="0052w000002rvs4CCC" itemLabel="devika veeramalla"></apex:selectOption>
+                </apex:selectList>
+                <br/>
+                <apex:commandButton action="{!task28}" value="change owner"/>
+                <br/>
+                <apex:pageBlockTable value="{!opplist}" var="opp">
+                    <apex:column value="{!opp.id}"/>
+                    <apex:column value="{!opp.name}"/>
+                    <apex:column value="{!opp.ownerid}"/>
+                
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>   
+      <!--<lightning-input value={name} ></lightning-input>-->  
+        <c-lwcchild oncallpasstoparent={passToParent}></c-lwcchild>   
+       
+ <div style="width: auto;">
+            <lightning-tile label='parent Component'></lightning-tile>
+
+            <lightning-button label="Add Contact" 
+            variant="brand" 
+            onclick={createcon}></lightning-button>
+
+            <template if:true={con}>
+            <lightning-card>
+                <lightning-record-form
+                    object-api-name={objectApiName}
+                    fields={fields}
+                    onsuccess={successpage}>
+                </lightning-record-form>
+            </lightning-card>
+        </template>
+            <template if:true={data}>
+               
+    
+                <lightning-datatable data={data}
+                                     columns={columns}
+                                     key-field="id"
+                                     hide-checkbox-column="true"
+                                     onrowaction={callRowAction}
+                                     >
+                                    </lightning-datatable>
+            </template>
+    
+        </div>
+       
+       
+        <div if:true={showLoadingSpinner}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </div>
+   
+    </lightning-card>   
+ </template>

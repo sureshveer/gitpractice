@@ -1,0 +1,14 @@
+<apex:page standardController="Opportunity" extensions="apexvfbasic32">
+    
+    <apex:form >
+    <apex:pageBlock title="vf task 32">
+        <apex:pageBlockSection title="insert opportunity">
+            <apex:inputText value="{!oppname}" label="opportunity name:"/><br/>
+             <apex:inputText value="{!oppamount}" label="amount:"/><br/>
+             <apex:inputText value="{!oppclosedate}" label="closed date:"/><br/>
+             <apex:inputText value="{!oppstagename}" label="stagename:"/><br/>
+            <apex:commandButton action="{!saveopp}" value="save opp"/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

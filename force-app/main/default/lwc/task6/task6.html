@@ -1,0 +1,101 @@
+<template>
+     <lightning-card title="How to display the Contacts based on Account Name in LWC" custom-icon="custom:icon13">
+        <div class="slds slds-p-horizontal--medium">
+         <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-12 slds-m-bottom--medium">
+                <lightning-Input type="search" placeholder="Search..." value={accountName} name="accountName" class="accountName" onchange={handleChangeAccName}></lightning-input>                 
+             </div>
+             <div class="slds-col slds-size_6-of-12 slds-m-top--medium" style="margin-top: 19px; margin-left: 10px;">                 
+                    <lightning-button label="Search Account Name" size="small" variant="brand" onclick={handleAccountSearch} icon-name="utility:search" icon-position="right"></lightning-button>
+             </div>
+         </div>
+         <table class="slds-table slds-table_cell-buffer slds-table_bordered" border="1" cellspacing="0" cellpadding="0"  style="border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Account Name</th>
+                    <th>View Record</th>
+                    <th>edit record</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={records} for:item="conItem">
+                    <tr key={conItem.Id}>
+                        <td>{conItem.FirstName}</td>
+                        <td>{conItem.LastName}</td>
+                        <td>{conItem.Email}</td>
+                        <td>{conItem.Phone}</td>
+                        <td>{conItem.Account.Name}</td>
+                        <td class="conid">{conItem.Id}</td>
+                        <td>
+                        <a onclick={viewModal} data-id={conItem.id}>Test</a> </td>
+
+                        <!--<td><lightning-button variant="brand"
+                            label="view"
+                            title="view format"
+                            onclick={viewModal}
+                            class="slds-m-left_x-small">
+                         </lightning-button></td>
+                         <td><lightning-button variant="brand"
+                            label="edit"
+                            title="edit format"
+                            onclick={editModal}
+                            class="slds-m-left_x-small">
+                         </lightning-button></td>-->
+
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+        <template if:true={viewdata}>
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <lightning-card title="How to display the Contacts based on Account Name in LWC" custom-icon="custom:icon13">
+                            <h1>suresh</h1>
+                            </lightning-card>
+                        </header>
+
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <p><b>Modals/Popup Box are used to display content in a layer above the app.
+                            </b></p>
+                            <p><b>This paradigm is used in cases such as the creation or editing of a record, as well as various types of messaging and wizards.
+                            </b></p>
+                        </div>
+
+
+                        </div>
+                        </section>
+        </template>
+            
+           <!--- <lightning-record-view-form
+            record-id={recordId}
+            object-api-name="Contact">
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-output-field field-name="FirstName"></lightning-output-field>
+            <lightning-output-field field-name="LastName"></lightning-output-field>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-output-field field-name="Email"></lightning-output-field>
+            <lightning-output-field field-name="Phone"></lightning-output-field>
+        </div>
+    </div>
+</lightning-record-view-form>-->
+
+
+       
+        <template if:true={editdata}>
+            <lightning-card title="How to display the Contacts based on Account Name in LWC" custom-icon="custom:icon13">
+                <h1>kumar</h1>
+                </lightning-card>     
+
+        </template>
+         </div>
+         </lightning-card>
+</template>

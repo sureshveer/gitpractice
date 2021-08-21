@@ -1,0 +1,28 @@
+<apex:page controller="july28" sidebar="false" showHeader="false">
+    <apex:form >
+        <apex:pagemessages ></apex:pagemessages>
+        <apex:pageBlock >
+            <apex:inputtext value="{!ipname}" label="input product name"/>
+            <apex:selectList size="1" value="{!ipstatus}" label="input status">
+                <apex:selectOptions value="{!ippstatus}"/>
+            </apex:selectList>
+            <apex:pageBlockTable value="{!astlist}" var="assets">
+                <apex:column value="{!assets.name}"/>
+                <apex:column value="{!assets.status}"/>
+                <apex:column value="{!assets.purchasedate}"/>
+                <apex:column value="{!assets.product2.name}"/>
+                <apex:column >
+                    <apex:commandLink action="{!show}" value="show details">
+                        <apex:param name="asstid" value="{!assets.id}" assignTo="{!selectedipid}"/>
+                    </apex:commandLink>                    
+                </apex:column>
+                 <apex:column >
+                    <apex:commandLink action="{!back}" value="backd">
+                        <apex:param name="asstid" value="{!assets.id}" assignTo="{!selectedipid}"/>
+                    </apex:commandLink>                    
+                </apex:column>
+            </apex:pageBlockTable>
+            <apex:commandButton value="show assts" action="{!showassets}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

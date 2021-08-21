@@ -1,0 +1,324 @@
+<apex:page >
+    <script>
+        function AddandPercentage(){
+        var a=document.getElementById("engmarks").value;
+        var b=document.getElementById("telmarks").value;
+        var c=document.getElementById("mathsmarks").value;
+        var d=document.getElementById("socialmarks").value;
+        var e=document.getElementById("hindimarks").value;    
+        var totalmarks=parseInt(a) + parseInt(b)+parseInt(c) + parseInt(d)+parseInt(e);
+        document.getElementById("totalmarks").value=totalmarks;
+        var percentage=totalmarks/5;
+        document.getElementById("percentage").value=percentage;
+            alert("total marks are"+totalmarks+"percentage is"+percentage);
+        }
+    </script>
+    <script>
+    function GreatestNumber(){
+        var a=parseInt(document.getElementById("firstnumber").value);
+        var b=parseInt(document.getElementById("secondnumber").value);
+        var c=parseInt(document.getElementById("thirdnumber").value);
+        
+        if(a>b && a>c){
+        alert(a+ "is greatest number");
+        }
+        else if(b>c){
+        alert(b+"is greatest number");  
+        }
+        else{
+        alert(c+"is greatest number");    
+        }
+            
+    }
+    
+    </script>
+    <script>
+    function evenorodd(){
+      
+         var a=parseInt(document.getElementById("anynumber").value);
+          if(a%2 == 0){
+              alert(a+"is even number");
+          }
+        else{
+        alert(a+"is odd number");    
+        }
+    
+    }
+    
+    </script>
+    <script>
+    function lengthofstring(){
+         var a=document.getElementById("anystring").value;
+    alert(a +"length is"+a.length);
+    }
+    
+    </script>
+    
+    <script>
+    function AscendingOrder(){
+       
+        var a=parseInt(document.getElementById("firstnumber").value);
+        var b=parseInt(document.getElementById("secondnumber").value);
+        var c=parseInt(document.getElementById("thirdnumber").value);
+        
+        var temp;
+        var numbers=[a,b,c];
+         for(integer i=0;i<numbers.length;i++){
+            for(integer j=i+1;j<numbers.length;j++){
+                if(numbers[i]>numbers[j]){
+                    temp=numbers[i];
+                    numbers[i]=numbers[j];
+                    numbers[j]=temp;
+                }
+            }
+        }
+        for(integer k=0;k<numbers.length;k++){
+         document.getElementById("firstnumber").value=numbers[k];
+          document.getElementById("secondnumber").value=numbers[k];
+           document.getElementById("thirdnumber").value=numbers[k];  
+        }
+      
+      
+    }
+    </script>
+    <script>  
+function operation(){  
+var x=(document.getElementById("number1").value); 
+var y=(document.getElementById("number2").value);
+var operator1=document.getElementById("operator").value;
+
+if(operator1=="add"){
+var result= parseInt(x) + parseInt(y);
+document.getElementById("result").value=result;
+alert("Addition is" +result);  
+}
+if(operator1=="sub"){
+var result= parseInt(x) - parseInt(y);
+document.getElementById("result").value=result;
+alert("Subtraction is" +result);  
+}
+if(operator1=="mul"){
+var result= parseInt(x) * parseInt(y);
+document.getElementById("result").value=result;
+alert("Multipication is" +result);  
+}
+if(operator1=="div"){
+var result= parseInt(x) / parseInt(y);
+document.getElementById("result").value=result;
+alert("division is" +result);  
+}
+if(operator1=="mod"){
+var result= parseInt(x) % parseInt(y);
+document.getElementById("result").value=result;
+alert("remainder is" +result);  
+}
+}  
+</script>
+    <script>
+    function StringConcat(){
+         var a=document.getElementById("firstnumber").value;
+        var b=document.getElementById("secondnumber").value;
+        var c=document.getElementById("thirdnumber").value;
+    
+        if(a!=" " && b!=" " && c!=" "){
+            // document.getElementById("thirdnumber").value=a+b+c;
+        alert(a+b+c);    
+        }
+    
+    
+    
+    }
+    
+    
+    </script>
+    
+    <script>
+    function SwapNumbers(){
+      
+         var a=parseInt(document.getElementById("firstnumber").value);
+        var b=parseInt(document.getElementById("secondnumber").value);
+        var c=parseInt(document.getElementById("thirdnumber").value);
+         temp=a;
+        a=b;
+        b=c;
+        c=temp;
+        
+         if(a!=0 && b!=0 && c!=0){
+             document.getElementById("firstnumber").value=a;
+             document.getElementById("secondnumber").value=b;
+             document.getElementById("thirdnumber").value=c;             
+            alert("a"+a+" "+"b"+b+" "+"c"+c);
+        }
+    
+    
+    
+    }
+    
+    </script>
+    <script>
+    function StringPalindrome(){
+       var a=document.getElementById("anystring").value;
+    
+        var reverse=" ";
+        for(var i=a.length-1;i>=0;i--){
+        reverse=reverse+a.charAt(i);    
+        }
+        alert(reverse.trim());
+        if(a==reverse.trim()){
+        alert(a+"is palindrome");
+        }
+        else{
+        alert(a+"is not palindrome");    
+        }
+    
+    }
+    </script>
+    
+    <style>
+    #button1{
+        width:100%;
+        
+        }
+     h2{
+        color:brown;
+        
+        }
+     h1{
+        color:red;
+        background-color:black;
+        width:100%;
+        } 
+        #firstnumber{
+       width:100%;
+        }
+        #secondnumber{
+       width:100%;
+        }
+        #thirdnumber{
+       width:100%;
+        }
+         #anystring{
+       width:100%;
+        }
+        
+       div{
+  position: relative;
+  animation: mymove 10s infinite;
+}
+
+@keyframes mymove {
+  from {left: 0px;}
+  to {left: 2000px;}
+}
+    
+    </style>
+          <apex:form >
+              <br/><br/><br/>
+       <div id="mytasks"> <h1>My Tasks related to visualforce </h1></div>
+        <hr color="lightgreen"/>
+        <h2> Task1 is here </h2>
+        <table  align="center"  bgcolor="orange">
+            <tr>
+                <td>Hello World</td>
+            </tr> 
+        </table>
+         <hr color="lightgreen"/>
+        <h2> Task3  is here </h2>
+               <table  border="2" align="center" bgcolor="orange">
+                   <tr><td style="color: green;" colspan="5" align="center">My Caliculator</td></tr>  
+                   <tr>
+                   <td><input type="text" id="number1" name="number1" placeholder="Enter any number"/></td><br/>
+                   <td><select id="operator">
+                   <option value="add">+</option>
+                   <option value="sub">-</option>
+                   <option value="mul">*</option>
+                   <option value="div">/</option>
+                   <option value="mod">%</option>
+                   </select></td>
+                   <td><input type="text" id="number2" name="number2" placeholder="Enter any number"/></td><br/>
+                   <td><input type="button" value="=" onclick="operation()" /></td>
+                   <td><input type="text" id="result" name="result" placeholder="result"  /></td><br/>
+                   </tr>
+                   </table>
+        
+        <hr color="lightgreen"/>
+        <h2> Task5 is here </h2>
+                <table border="2" align="center" bgcolor="orange">
+            <tr>
+                <td>English Marks</td>
+                <td><input type="text" id="engmarks" placeholder="enter english marks" /></td>
+            </tr> 
+             <tr>
+                <td>Telugu Marks</td>
+                <td><input type="text" id="telmarks" placeholder="enter telugu marks" /></td>
+            </tr> 
+             <tr>
+                <td>Maths Marks</td>
+                <td><input type="text" id="mathsmarks" placeholder="enter maths marks"/></td>
+            </tr>
+             <tr>
+                <td>Social Marks</td>
+                <td><input type="text" id="socialmarks" placeholder="enter social marks" /></td>
+            </tr>
+             <tr>
+                <td>Hindi Marks</td>
+                <td><input type="text" id="hindimarks" placeholder="enter hindi marks" /></td>
+            </tr> 
+             <tr>
+                 <td colspan="2"><input type="button" id="button1" value="AddandPercentage" onclick="AddandPercentage();" /></td>
+             </tr>       
+              <tr>
+                <td><input type="text" id="totalmarks" placeholder="total marks"/></td>
+                <td><input type="text" id="percentage" placeholder="percentage"/></td>
+            </tr> 
+        </table>
+        
+         <hr color="lightgreen"/>
+         <h2> Task 7,11,12,13 is here </h2>
+            <table border="2" align="center" bgcolor="orange">
+              
+              <tr>
+                <td><input type="button" id="button1" value="Greatest Number" onclick="GreatestNumber();" /></td>              
+           
+                <td><input type="button" id="button1" value="Ascending Order" onclick="AscendingOrder();" /></td> 
+            
+                <td><input type="button" id="button1" value="String concat" onclick="StringConcat();" /></td> 
+             
+                <td><input type="button" id="button1" value="Swap Numbers" onclick="SwapNumbers();" /></td> 
+             </tr>   
+            <tr>
+                <td colspan="4"><input type="text" id="firstnumber" placeholder="enter first number" /></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input type="text" id="secondnumber" placeholder="enter second number" /></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input type="text" id="thirdnumber" placeholder="enter third number" /></td>
+            </tr> 
+           
+            </table>    
+         <hr color="lightgreen"/>
+         <h2> Task8  is here </h2>
+        <table border="2" align="center" bgcolor="orange">
+            <tr>
+                <td><input type="text" id="anynumber" placeholder="enter any number" /></td>
+                <td><input type="button" id="button1" value="evenorodd" onclick="evenorodd();" /></td>
+            </tr>
+        </table>
+              
+         <hr color="lightgreen"/>
+         <h2> Task 6,9 is here </h2>
+        <table border="2" align="center" bgcolor="orange">
+            <tr>
+             <td><input type="button" id="button1" value="length" onclick="lengthofstring();" /></td>
+              <td><input type="button" id="button1" value="Palindrome" onclick="StringPalindrome();" /></td>   
+            </tr>
+            <tr>
+                <td colspan="2"><input type="text" id="anystring" placeholder="enter any string" /></td>
+            </tr>
+        </table>
+        <hr color="lightgreen"/>
+       
+    </apex:form>
+ 
+</apex:page>

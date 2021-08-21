@@ -1,0 +1,12 @@
+<apex:page controller="vfbasic_college">
+    <apex:form >
+    <apex:pageBlock title="vf Basic task5">
+        <apex:pageBlockSection title="college details">
+            <apex:outputText label="collegename:" value="{!collegename}"> </apex:outputText><br/>
+            <apex:outputText label=" branch:" value="{!branch}"> </apex:outputText><br/>
+            <apex:outputText label="city:" value="{!city}"> </apex:outputText><br/>
+            <apex:outputText label="phone:" value="{!phone}"> </apex:outputText><br/>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

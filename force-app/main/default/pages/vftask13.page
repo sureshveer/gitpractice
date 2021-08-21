@@ -1,0 +1,23 @@
+<apex:page controller="task13helperclass" sidebar="false" showHeader="false">
+    
+    <apex:form >
+    <apex:pageBlock title="visual force tasks">
+        <apex:pageBlockSection title="task13">
+            <apex:selectList value="{!department}" label="Enter department" size="1">
+                <apex:selectOptions value="{!departments}"/>
+                 <apex:actionSupport event="onchange" reRender="courseid"/>
+            </apex:selectList>
+              
+            <br/>
+            
+            <apex:selectList value="{!course}" id="courseid" label="Enter Course" size="1">
+                <apex:selectOptions value="{!courses}"/> 
+            </apex:selectList>
+            
+            
+
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

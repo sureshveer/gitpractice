@@ -1,0 +1,20 @@
+<apex:page controller="task15helperclass"  sidebar="false" showHeader="false">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="insert Account">
+                <apex:inputText value="{!Accountid}" label="Account id:"/>
+                <apex:inputText value="{!acctname}" label="Account name:"/>
+                 <apex:inputText value="{!Industry}" label="industry:"/>
+                 <apex:inputText value="{!AnnualRevenue}" label="Annual revenue:"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="insert contact">
+                  <apex:inputText value="{!contactname}" label="Contact Name:"/>
+                   <apex:inputText value="{!Email}" label="Email"/>
+                <apex:inputText value="{!Department}" label="Department"/>
+            </apex:pageBlockSection>
+           <apex:commandButton action="{!saveacct}" value="insertAccount"/>
+
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

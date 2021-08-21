@@ -1,0 +1,52 @@
+<apex:page controller="apextask20LVCJune11" sidebar="false" showHeader="false">
+     <apex:form >
+        <apex:pageBlock >
+            
+                  <apex:pageMessages id="msgid" escape="true"></apex:pageMessages><br/>
+            <apex:pageBlockSection title="Live Coding Task20">
+                <apex:inputText value="{!accname}" label="Accname:"/><br/>
+                
+           
+                <apex:commandButton action="{!showcontacts}" value="show contacts"/>
+                 <apex:commandButton action="{!showopps}" value="show opps"/>
+          
+                <br/>
+               
+                <apex:pageBlockTable value="{!conlist}" var="con" rendered="{!conlist!=null}">
+                    <apex:column value="{!con.id}"/>
+                    <apex:column value="{!con.name}"/>
+                    <apex:column value="{!con.email}"/>	
+                    <apex:column >
+                        <apex:commandLink action="{!showdetails}" value="show details"> 
+                            <apex:param name="cid" value="{!con.id}" assignTo="{!x}"/>
+                        </apex:commandLink>
+                        
+                    </apex:column>
+                
+                </apex:pageBlockTable>
+                
+                      <br/>
+               
+                  <apex:pageBlockTable value="{!opplist}" var="opp" rendered="{!opplist!=null}">
+                    <apex:column value="{!opp.id}"/>
+                    <apex:column value="{!opp.name}"/>
+                    <apex:column value="{!opp.amount}"/>
+                      <apex:column value="{!opp.description}"/>
+                    <apex:column >
+                        <apex:commandLink action="{!showdetailsopps}" value="show details"> 
+                            <apex:param name="oppid" value="{!opp.id}" assignTo="{!y}"/>
+                        </apex:commandLink>
+                        
+                    </apex:column>
+                
+                </apex:pageBlockTable>
+           
+                
+            
+                </apex:pageBlockSection>
+           
+         </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

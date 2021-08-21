@@ -1,0 +1,12 @@
+<apex:page standardController="case" recordSetVar="cases">
+   <apex:form >
+    <apex:pageBlock title="Basic task13">
+        <apex:pageBlockSection title="case details">
+            <apex:pageBlockTable value="{!cases}" var="ca">
+                <apex:column value="{!ca.Subject}"/>
+                <apex:column value="{!ca.Priority}"/> 
+</apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

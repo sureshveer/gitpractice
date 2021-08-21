@@ -1,0 +1,24 @@
+<apex:page controller="apexlivecodingjuly27">
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:inputfield value="{!c.DueDate__c}" label="DueDate:" required="true"/>
+                 <apex:inputfield value="{!c.Priority}" label="Priority:" >
+                      <apex:actionSupport event="onchange" reRender="caseid" action="{!showcases}"/>
+                </apex:inputfield>
+                 <apex:inputfield value="{!c.Status}" label="Status:" >
+                     <apex:actionSupport event="onchange" reRender="caseid" action="{!showcases}"/>
+                </apex:inputfield>
+                <apex:commandButton action="{!showcases}" value="show cases" />
+                <apex:pageBlockTable value="{!caselist}" var="c" rendered="{!tableview}" id="caseid">
+                    <apex:column value="{!c.DueDate__c}"/>
+                    <apex:column value="{!c.priority}"/>
+                    <apex:column value="{!c.Status}"/>
+                
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

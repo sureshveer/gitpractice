@@ -1,0 +1,19 @@
+<apex:page controller="AccountSearchPage">
+    <apex:pageMessages ></apex:pageMessages>
+    <apex:form >
+         <apex:sectionHeader title="Account Search" subtitle="Home" help="apex/help"/>
+        <apex:outputText >Account Name :</apex:outputText>
+          <apex:inputtext value="{!AccountName}"/>
+        <apex:commandButton value="search" action="{!search}"/>
+        
+        <apex:pageblock title="Account Records"  rendered="{!Searchmode}">
+            <apex:pageblocktable value="{!acc1}" var="a" >
+                <apex:column headerValue="Account Name">
+                 <apex:commandLink action="{!forwardId}" value="{!a.name}" >
+                 <apex:param name="accid" value="{!a.id}" assignTo="{!accid}"/>
+                    </apex:commandLink>
+                </apex:column>
+            </apex:pageblocktable>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

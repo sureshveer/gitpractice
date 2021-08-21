@@ -1,0 +1,16 @@
+<apex:page controller="task33helperclass">
+    
+<apex:form >
+<apex:pageBlock >
+    <apex:pageBlockTable value="{!caselist}" var="c" border="2" >
+         <apex:column value="{!c.id}"/>
+           <apex:column value="{!c.subject}"/>
+           <apex:column value="{!c.status}"/>
+           <apex:column value="{!c.casenumber}"/>
+           
+        </apex:pageBlockTable> 
+    </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

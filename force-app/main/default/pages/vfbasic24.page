@@ -1,0 +1,13 @@
+<apex:page controller="apexvfbasic24">
+    
+    <apex:form >
+    <apex:pageBlock title="vf basic task 24">
+        <apex:pageBlockSection title="fetching account records including deleted">
+            <apex:pageBlockTable value="{!acclist}" var="acc">
+                <apex:column value="{!acc.id}"/>
+                <apex:column value="{!acc.name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

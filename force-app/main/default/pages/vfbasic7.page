@@ -1,0 +1,14 @@
+<apex:page standardController="contact" sidebar="false" showHeader="false">
+    
+     <apex:form >    
+        <apex:pageBlock title="Visual Force Tasks">
+            <apex:pageBlockSection title="basictask7">
+                <apex:outputText value="{!contact.name}"></apex:outputText><br/>
+                <apex:outputText value="{!contact.phone}"></apex:outputText><br/>
+                <apex:outputText value="{!contact.Email}"></apex:outputText><br/>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+         
+    </apex:form>
+    
+</apex:page>

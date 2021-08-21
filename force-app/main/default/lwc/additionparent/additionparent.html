@@ -1,0 +1,23 @@
+<template>
+
+    <div class="slds-m-around_medium">
+ 
+      
+            <div style='width:70%;Height:50%;margin-left:15%;margin-right:15%;border:2px solid green;background:cadetblue'>
+            <c-additionchild onmycustomevent={handleCustomEvent} ></c-additionchild>
+               </div>
+    
+       <br/>
+       
+       <div if:true={searchData}>
+        <div style='width:70%;Height:50%;margin-left:15%;margin-right:15%;border:2px solid green;'>
+        <lightning-card >
+            <div style='text-align:center;color:black;'>
+           <b> result is :</b>  {msg}
+            </div>
+        </lightning-card>
+        </div>
+     </div>
+     
+    </div>
+</template>

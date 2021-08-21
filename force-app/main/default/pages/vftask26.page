@@ -1,0 +1,22 @@
+<apex:page controller="task26helperclass" sidebar="false" showHeader="false">
+     <apex:form >    
+        <apex:pageBlock title="Visual Force Task26">
+            <apex:pageBlockSection title="Account details">
+                
+                <apex:repeat value="{!acclist}" var="acc">
+                    
+                    <apex:outputText value="{!acc.id}"></apex:outputText><br/>
+                    <apex:outputText value="{!acc.name}"></apex:outputText><br/>
+                     <apex:repeat value="{!acc.contacts}" var="con">
+                         <apex:outputText value="contacts"></apex:outputText><br/>
+                         <apex:outputText value="{!con.name}"></apex:outputText><br/>
+                         <apex:outputText value="{!con.id}"></apex:outputText><br/>
+                         <apex:outputText value="separation of conatcts"></apex:outputText><br/>
+                    </apex:repeat>
+                    <apex:outputText value="separation of accounts"></apex:outputText><br/>
+                    
+                </apex:repeat>
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

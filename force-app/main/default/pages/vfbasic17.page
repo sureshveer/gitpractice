@@ -1,0 +1,14 @@
+<apex:page controller="apexvfbasic17" >
+     <apex:form >
+    <apex:pageBlock title="Basic task17">
+        <apex:pageBlockSection title="contact details">
+            <apex:pageBlockTable value="{!ctlist}" var="ct">
+                <apex:column headerValue="Account name" value="{!ct.Name}"/> <br/>
+                <apex:column value="{!ct.Department}"/> <br/>
+                <apex:column value="{!ct.phone}"/><br/>
+</apex:pageBlockTable>
+
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

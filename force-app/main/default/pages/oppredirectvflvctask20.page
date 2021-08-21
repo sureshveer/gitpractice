@@ -1,0 +1,43 @@
+<apex:page controller="oppredirectapextask20lvcjune11">
+     <apex:form id="formid">
+        <apex:pageBlock rendered="{! modestate=='detail'}">
+           
+             <apex:commandButton action="{!editopp}" value="edit"  reRender="formid"/>
+            <apex:commandButton action="{!deleteopp}" value="delete"/>
+           
+            
+            <apex:pageBlockSection title="redirect LVCtask20">
+               
+               
+                <apex:outputText value="{!opprecord.id}"></apex:outputText><br/>
+                <apex:outputText value="{!opprecord.name}"></apex:outputText><br/>
+                <apex:outputText value="{!opprecord.amount}"></apex:outputText><br/>
+                
+                
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+         
+       
+         
+         <apex:pageBlock rendered="{!modestate=='edit'}">
+           
+            <apex:commandButton action="{!cancelopp}" value="cancel"/>
+            <apex:commandButton action="{!saveopp}" value="save"/>
+            
+            <apex:pageBlockSection title="redirect LVCtask20" id="conid">
+               
+                <apex:inputText value="{!opprecord.id}"/><br/>
+                <apex:inputText value="{!opprecord.name}"/><br/>
+                <apex:inputText value="{!opprecord.amount}"/><br/>
+                
+                
+            </apex:pageBlockSection>
+         </apex:pageBlock>
+         
+         
+         
+         
+    </apex:form>
+    
+    
+</apex:page>

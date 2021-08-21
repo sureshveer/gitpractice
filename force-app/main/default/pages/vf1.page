@@ -1,0 +1,8 @@
+<apex:page controller="PDFController1">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!acclist}" var="e">
+            <apex:column value="{!e.Name}"/>
+            <apex:column value="{!e.industry}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

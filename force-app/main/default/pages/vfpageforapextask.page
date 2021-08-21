@@ -1,0 +1,15 @@
+<apex:page controller="addition">
+    <apex:form >
+        <apex:pageBlock title="task1">
+            <apex:pageBlockSection title="Addition">
+         
+        enter a value: <apex:inputText size="15" value="{!firstinput}"/>                
+        enter b value: <apex:inputText size="15" value="{!secondinput}"/>
+         <apex:commandButton value="=" action="{!add}"/> 
+                <br/>
+        Addition of a and b is <apex:inputText value="{!result}"/>
+            
+        </apex:pageBlockSection>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>
