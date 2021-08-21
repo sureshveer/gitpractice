@@ -8,10 +8,12 @@ global with sharing class github_webhooks_call {
     global static void githubostdetails() {
         RestRequest req= RestContext.request;
         RestResponse res=RestContext.response;
-       // string s=req.requestBody.tostring();
-        System.debug('webhook response');
+        string s=req.headers.get('X-GitHub-Event');
+        System.debug('webhook response'+s);
         System.debug(req.requestBody.tostring()+'payload');
-        Account a=new Account(name='kkkkk');
+        Account a=new Account();
+        a.name=s;
+        a.description=s;
         insert a;
     }
 }
